@@ -1,4 +1,4 @@
-# Anastasia Monzon 3D Visualization Portfolio
+# 3D-Artist-Portfolio
 
 A modern portfolio website developed for a 3D visualization artist, showcasing work across architectural and product visualization. Built with performance and responsiveness in mind, the application features a custom scroll-driven, frame-by-frame animation effect that reveals a sequence of images as the user navigates the page.
 
@@ -10,7 +10,7 @@ It is publicly viewable strictly for portfolio evaluation and technical demonstr
 
 ## Tech Stack
 
-* **Framework:** Next.js 15.5.15 (App Router)
+* **Framework:** Next.js 16.2.6 (App Router)
 * **Language:** TypeScript
 * **Styling:** Tailwind CSS
 * **Animations:** Framer Motion
