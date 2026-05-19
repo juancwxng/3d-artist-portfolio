@@ -1,8 +1,7 @@
-'use client';
+"use client";
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from "react";
 
-// CSS injected once, client-side only — no styled-jsx / external dep required
 const CURSOR_CSS = `
   body { cursor: none; }
   a, button, [tabindex], [data-cursor] { cursor: none; }
@@ -23,52 +22,61 @@ const CURSOR_CSS = `
 `;
 
 export default function PremiumEffects() {
-  // null  = not yet checked (server + first paint)
-  // true  = show loader
-  // false = skip loader (already seen this session)
   const [showLoader, setShowLoader] = useState<boolean | null>(null);
-
   const loaderRef = useRef<HTMLDivElement>(null);
   const cursorDotRef = useRef<HTMLDivElement>(null);
   const cursorRingRef = useRef<HTMLDivElement>(null);
   const grainRef = useRef<HTMLCanvasElement>(null);
 
-  /* ── Hydration-safe sessionStorage check ────────────────
-     Runs only on the client, after the first render.
-     Sets showLoader so the loader div is only shown/hidden
-     after hydration is complete — no server/client mismatch. */
   useEffect(() => {
     try {
-      const seen = sessionStorage.getItem('loader_seen');
+      const seen = sessionStorage.getItem("loader_seen");
       setShowLoader(seen === null);
     } catch {
-      // sessionStorage blocked (private browsing edge case) — skip loader
       setShowLoader(false);
     }
   }, []);
 
   /* ── 1. CINEMATIC LOADER ─────────────────────────────── */
   useEffect(() => {
-    // Wait until we know whether to show the loader
     if (showLoader !== true) return;
 
     const loader = loaderRef.current;
     if (!loader) return;
 
-    document.body.style.overflow = 'hidden';
+    document.body.style.overflow = "hidden";
 
-    const name = loader.querySelector<HTMLElement>('.loader-name');
-    const line = loader.querySelector<HTMLElement>('.loader-line');
+    const name = loader.querySelector<HTMLElement>(".loader-name");
+    const line = loader.querySelector<HTMLElement>(".loader-line");
 
     const timeline = [
-      { t: 200,  fn: () => { if (name) name.style.opacity = '1'; } },
-      { t: 900,  fn: () => { if (line) line.style.transform = 'scaleX(1)'; } },
-      { t: 1800, fn: () => { loader.style.opacity = '0'; } },
+      {
+        t: 200,
+        fn: () => {
+          if (name) name.style.opacity = "1";
+        },
+      },
+      {
+        t: 900,
+        fn: () => {
+          if (line) line.style.transform = "scaleX(1)";
+        },
+      },
+      {
+        t: 1800,
+        fn: () => {
+          loader.style.opacity = "0";
+        },
+      },
       {
         t: 2500,
         fn: () => {
-          document.body.style.overflow = '';
-          try { sessionStorage.setItem('loader_seen', '1'); } catch { /* noop */ }
+          document.body.style.overflow = "";
+          try {
+            sessionStorage.setItem("loader_seen", "1");
+          } catch {
+            /* noop */
+          }
           setShowLoader(false);
         },
       },
@@ -78,7 +86,7 @@ export default function PremiumEffects() {
 
     return () => {
       timers.forEach(clearTimeout);
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [showLoader]);
 
@@ -88,9 +96,12 @@ export default function PremiumEffects() {
     const ring = cursorRingRef.current;
     if (!dot || !ring) return;
 
-    let mouseX = -100, mouseY = -100;
-    let dotX   = -100, dotY   = -100;
-    let ringX  = -100, ringY  = -100;
+    let mouseX = -100,
+      mouseY = -100;
+    let dotX = -100,
+      dotY = -100;
+    let ringX = -100,
+      ringY = -100;
     let raf: number;
     let viewMode = false;
 
@@ -103,13 +114,13 @@ export default function PremiumEffects() {
 
       if (isView !== viewMode) {
         viewMode = isView;
-        ring.classList.toggle('cursor-view', isView);
+        ring.classList.toggle("cursor-view", isView);
       }
     };
 
     const tick = () => {
-      dotX  += (mouseX - dotX)  * 0.55;
-      dotY  += (mouseY - dotY)  * 0.55;
+      dotX += (mouseX - dotX) * 0.55;
+      dotY += (mouseY - dotY) * 0.55;
       ringX += (mouseX - ringX) * 0.12;
       ringY += (mouseY - ringY) * 0.12;
 
@@ -121,11 +132,11 @@ export default function PremiumEffects() {
       raf = requestAnimationFrame(tick);
     };
 
-    window.addEventListener('mousemove', onMove, { passive: true });
+    window.addEventListener("mousemove", onMove, { passive: true });
     raf = requestAnimationFrame(tick);
 
     return () => {
-      window.removeEventListener('mousemove', onMove);
+      window.removeEventListener("mousemove", onMove);
       cancelAnimationFrame(raf);
     };
   }, []);
@@ -136,18 +147,18 @@ export default function PremiumEffects() {
     const canvas = grainRef.current;
     if (!canvas) return;
 
-    const ctx = canvas.getContext('2d');
+    const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
     let raf: number;
     let frame = 0;
 
     const resize = () => {
-      canvas.width  = window.innerWidth * 0.25;
+      canvas.width = window.innerWidth * 0.25;
       canvas.height = window.innerHeight * 0.25;
     };
     resize();
-    window.addEventListener('resize', resize, { passive: true });
+    window.addEventListener("resize", resize, { passive: true });
 
     const renderGrain = () => {
       frame++;
@@ -163,7 +174,7 @@ export default function PremiumEffects() {
 
       for (let i = 0; i < data.length; i += 4) {
         const v = (Math.random() * 255) | 0;
-        data[i]     = v;
+        data[i] = v;
         data[i + 1] = v;
         data[i + 2] = v;
         data[i + 3] = Math.random() < 0.5 ? 0 : 14; // sparse, very faint
@@ -177,7 +188,7 @@ export default function PremiumEffects() {
 
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener('resize', resize);
+      window.removeEventListener("resize", resize);
     };
   }, []);
 
@@ -189,29 +200,29 @@ export default function PremiumEffects() {
           ref={loaderRef}
           aria-hidden="true"
           style={{
-            position: 'fixed',
+            position: "fixed",
             inset: 0,
             zIndex: 9999,
-            background: '#201f1c',
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            gap: '1rem',
-            transition: 'opacity 0.6s ease',
+            background: "#201f1c",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: "1rem",
+            transition: "opacity 0.6s ease",
           }}
         >
           <span
             className="loader-name"
             style={{
-              fontFamily: 'var(--font-cormorant, Georgia, serif)',
-              fontSize: '9px',
-              fontStyle: 'italic',
-              letterSpacing: '0.35em',
-              color: 'rgba(247,243,238,0.7)',
+              fontFamily: "var(--font-cormorant, Georgia, serif)",
+              fontSize: "9px",
+              fontStyle: "italic",
+              letterSpacing: "0.35em",
+              color: "rgba(247,243,238,0.7)",
               opacity: 0,
-              transition: 'opacity 0.5s ease',
-              textTransform: 'uppercase' as const,
+              transition: "opacity 0.5s ease",
+              textTransform: "uppercase" as const,
             }}
           >
             A. Monzon
@@ -219,12 +230,12 @@ export default function PremiumEffects() {
           <div
             className="loader-line"
             style={{
-              width: '80px',
-              height: '1px',
-              background: 'rgba(247,243,238,0.25)',
-              transformOrigin: 'left center',
-              transform: 'scaleX(0)',
-              transition: 'transform 0.8s cubic-bezier(0.16,1,0.3,1)',
+              width: "80px",
+              height: "1px",
+              background: "rgba(247,243,238,0.25)",
+              transformOrigin: "left center",
+              transform: "scaleX(0)",
+              transition: "transform 0.8s cubic-bezier(0.16,1,0.3,1)",
             }}
           />
         </div>
@@ -235,17 +246,17 @@ export default function PremiumEffects() {
         ref={cursorDotRef}
         aria-hidden="true"
         style={{
-          position: 'fixed',
+          position: "fixed",
           top: 0,
           left: 0,
-          width: '6px',
-          height: '6px',
-          borderRadius: '50%',
-          background: 'rgba(247,243,238,0.85)',
-          pointerEvents: 'none',
+          width: "6px",
+          height: "6px",
+          borderRadius: "50%",
+          background: "rgba(247,243,238,0.85)",
+          pointerEvents: "none",
           zIndex: 9998,
-          willChange: 'transform',
-          mixBlendMode: 'difference' as const,
+          willChange: "transform",
+          mixBlendMode: "difference" as const,
         }}
       />
 
@@ -255,21 +266,21 @@ export default function PremiumEffects() {
         aria-hidden="true"
         className="cursor-ring"
         style={{
-          position: 'fixed',
+          position: "fixed",
           top: 0,
           left: 0,
-          width: '40px',
-          height: '40px',
-          borderRadius: '50%',
-          border: '1px solid rgba(247,243,238,0.3)',
-          pointerEvents: 'none',
+          width: "40px",
+          height: "40px",
+          borderRadius: "50%",
+          border: "1px solid rgba(247,243,238,0.3)",
+          pointerEvents: "none",
           zIndex: 9997,
-          willChange: 'transform',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          willChange: "transform",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
           transition:
-            'width 0.35s cubic-bezier(0.16,1,0.3,1), height 0.35s cubic-bezier(0.16,1,0.3,1), background 0.35s ease, border-color 0.35s ease',
+            "width 0.35s cubic-bezier(0.16,1,0.3,1), height 0.35s cubic-bezier(0.16,1,0.3,1), background 0.35s ease, border-color 0.35s ease",
         }}
       />
 
@@ -278,15 +289,15 @@ export default function PremiumEffects() {
         ref={grainRef}
         aria-hidden="true"
         style={{
-          position: 'fixed',
+          position: "fixed",
           inset: 0,
           zIndex: 9990,
-          pointerEvents: 'none',
+          pointerEvents: "none",
           opacity: 0.45,
-          mixBlendMode: 'overlay' as const,
+          mixBlendMode: "overlay" as const,
         }}
       />
-      
+
       <style dangerouslySetInnerHTML={{ __html: CURSOR_CSS }} />
     </>
   );
