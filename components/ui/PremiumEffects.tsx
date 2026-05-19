@@ -28,6 +28,10 @@ export default function PremiumEffects() {
   const cursorRingRef = useRef<HTMLDivElement>(null);
   const grainRef = useRef<HTMLCanvasElement>(null);
 
+  // Fix cursor-guide §3.1 — null = unresolved (server + first paint),
+  // true = fine pointer, false = touch device
+  const [cursorActive, setCursorActive] = useState<boolean | null>(null);
+
   useEffect(() => {
     try {
       const seen = sessionStorage.getItem("loader_seen");
@@ -35,6 +39,11 @@ export default function PremiumEffects() {
     } catch {
       setShowLoader(false);
     }
+  }, []);
+
+  // Fix cursor-guide §3.1 — resolve pointer type after hydration (SSR-safe)
+  useEffect(() => {
+    setCursorActive(window.matchMedia("(pointer: fine)").matches);
   }, []);
 
   /* ── 1. CINEMATIC LOADER ─────────────────────────────── */
@@ -91,27 +100,32 @@ export default function PremiumEffects() {
   }, [showLoader]);
 
   /* ── 2. MAGNETIC CURSOR ──────────────────────────────── */
+  // Fix cursor-guide §3.2 — guard with (pointer: fine), inject CSS conditionally,
+  // pause on visibilitychange
   useEffect(() => {
-    const dot = cursorDotRef.current;
+    if (!cursorActive) return;
+
+    const dot  = cursorDotRef.current;
     const ring = cursorRingRef.current;
     if (!dot || !ring) return;
 
-    let mouseX = -100,
-      mouseY = -100;
-    let dotX = -100,
-      dotY = -100;
-    let ringX = -100,
-      ringY = -100;
+    // Inject CSS only when cursor is confirmed active on a fine-pointer device
+    const style = document.createElement("style");
+    style.textContent = CURSOR_CSS;
+    document.head.appendChild(style);
+
+    let mouseX = -100, mouseY = -100;
+    let dotX   = -100, dotY   = -100;
+    let ringX  = -100, ringY  = -100;
     let raf: number;
     let viewMode = false;
+    let running  = true;
 
     const onMove = (e: MouseEvent) => {
       mouseX = e.clientX;
       mouseY = e.clientY;
 
-      const target = e.target as HTMLElement;
-      const isView = !!target.closest('[data-cursor="view"]');
-
+      const isView = !!(e.target as HTMLElement).closest('[data-cursor="view"]');
       if (isView !== viewMode) {
         viewMode = isView;
         ring.classList.toggle("cursor-view", isView);
@@ -119,12 +133,14 @@ export default function PremiumEffects() {
     };
 
     const tick = () => {
-      dotX += (mouseX - dotX) * 0.55;
-      dotY += (mouseY - dotY) * 0.55;
+      if (!running) return;
+
+      dotX  += (mouseX - dotX)  * 0.55;
+      dotY  += (mouseY - dotY)  * 0.55;
       ringX += (mouseX - ringX) * 0.12;
       ringY += (mouseY - ringY) * 0.12;
 
-      dot.style.transform = `translate(${dotX - 3}px, ${dotY - 3}px)`;
+      dot.style.transform  = `translate(${dotX - 3}px, ${dotY - 3}px)`;
       ring.style.transform = viewMode
         ? `translate(${ringX - 40}px, ${ringY - 40}px)`
         : `translate(${ringX - 20}px, ${ringY - 20}px)`;
@@ -132,18 +148,37 @@ export default function PremiumEffects() {
       raf = requestAnimationFrame(tick);
     };
 
+    // Fix cursor-guide §3.2 — pause rAF loop when tab is hidden
+    const onVisibility = () => {
+      if (document.hidden) {
+        running = false;
+        cancelAnimationFrame(raf);
+      } else {
+        running = true;
+        raf = requestAnimationFrame(tick);
+      }
+    };
+
     window.addEventListener("mousemove", onMove, { passive: true });
+    document.addEventListener("visibilitychange", onVisibility);
     raf = requestAnimationFrame(tick);
 
     return () => {
       window.removeEventListener("mousemove", onMove);
+      document.removeEventListener("visibilitychange", onVisibility);
       cancelAnimationFrame(raf);
+      // Remove injected style on unmount to avoid leakage on route changes
+      if (document.head.contains(style)) {
+        document.head.removeChild(style);
+      }
     };
-  }, []);
+  }, [cursorActive]);
 
   /* ── 3. ATMOSPHERIC GRAIN ────────────────────────────── */
+  // Fix scroll-guide §4.4 — pre-allocate ImageData once, reduce update
+  // frequency to every 8 frames (≈7.5 Hz), gate on matchMedia not innerWidth
   useEffect(() => {
-    if (window.innerWidth < 768) return;
+    if (!window.matchMedia("(min-width: 768px)").matches) return;
     const canvas = grainRef.current;
     if (!canvas) return;
 
@@ -152,29 +187,30 @@ export default function PremiumEffects() {
 
     let raf: number;
     let frame = 0;
+    // Pre-allocated ImageData — mutated in place each tick
+    let imageData: ImageData | null = null;
 
     const resize = () => {
-      canvas.width = window.innerWidth * 0.25;
-      canvas.height = window.innerHeight * 0.25;
+      canvas.width  = Math.floor(window.innerWidth  * 0.25);
+      canvas.height = Math.floor(window.innerHeight * 0.25);
+      // Re-allocate after resize since dimensions changed
+      imageData = ctx.createImageData(canvas.width, canvas.height);
     };
     resize();
     window.addEventListener("resize", resize, { passive: true });
 
     const renderGrain = () => {
       frame++;
-      // Re-seed every 4 frames — subtle flicker without burning CPU
-      if (frame % 4 !== 0) {
+      // Fix §4.4 — update every 8 frames (~7.5 Hz) instead of every 4
+      if (frame % 8 !== 0 || !imageData) {
         raf = requestAnimationFrame(renderGrain);
         return;
       }
 
-      const { width, height } = canvas;
-      const imageData = ctx.createImageData(width, height);
       const data = imageData.data;
-
       for (let i = 0; i < data.length; i += 4) {
         const v = (Math.random() * 255) | 0;
-        data[i] = v;
+        data[i]     = v;
         data[i + 1] = v;
         data[i + 2] = v;
         data[i + 3] = Math.random() < 0.5 ? 0 : 14; // sparse, very faint
@@ -241,48 +277,58 @@ export default function PremiumEffects() {
         </div>
       )}
 
-      {/* ── Magnetic Cursor Dot ── */}
-      <div
-        ref={cursorDotRef}
-        aria-hidden="true"
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "6px",
-          height: "6px",
-          borderRadius: "50%",
-          background: "rgba(247,243,238,0.85)",
-          pointerEvents: "none",
-          zIndex: 9998,
-          willChange: "transform",
-          mixBlendMode: "difference" as const,
-        }}
-      />
+      {/* Fix cursor-guide §3.3 — cursor elements only mounted on fine-pointer
+          devices; absent from DOM entirely on touch devices */}
+      {cursorActive === true && (
+        <>
+          {/* ── Magnetic Cursor Dot ── */}
+          <div
+            ref={cursorDotRef}
+            aria-hidden="true"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "6px",
+              height: "6px",
+              borderRadius: "50%",
+              background: "rgba(247,243,238,0.85)",
+              pointerEvents: "none",
+              zIndex: 9998,
+              willChange: "transform",
+              mixBlendMode: "difference" as const,
+            }}
+          />
 
-      {/* ── Magnetic Cursor Ring ── */}
-      <div
-        ref={cursorRingRef}
-        aria-hidden="true"
-        className="cursor-ring"
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "40px",
-          height: "40px",
-          borderRadius: "50%",
-          border: "1px solid rgba(247,243,238,0.3)",
-          pointerEvents: "none",
-          zIndex: 9997,
-          willChange: "transform",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          transition:
-            "width 0.35s cubic-bezier(0.16,1,0.3,1), height 0.35s cubic-bezier(0.16,1,0.3,1), background 0.35s ease, border-color 0.35s ease",
-        }}
-      />
+          {/* ── Magnetic Cursor Ring ── */}
+          <div
+            ref={cursorRingRef}
+            aria-hidden="true"
+            className="cursor-ring"
+            style={{
+              position: "fixed",
+              top: 0,
+              left: 0,
+              width: "40px",
+              height: "40px",
+              borderRadius: "50%",
+              border: "1px solid rgba(247,243,238,0.3)",
+              pointerEvents: "none",
+              zIndex: 9997,
+              willChange: "transform",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              transition: [
+                "width 0.35s cubic-bezier(0.16,1,0.3,1)",
+                "height 0.35s cubic-bezier(0.16,1,0.3,1)",
+                "background 0.35s ease",
+                "border-color 0.35s ease",
+              ].join(", "),
+            }}
+          />
+        </>
+      )}
 
       {/* ── Grain Canvas ── */}
       <canvas
@@ -298,7 +344,8 @@ export default function PremiumEffects() {
         }}
       />
 
-      <style dangerouslySetInnerHTML={{ __html: CURSOR_CSS }} />
+      {/* Fix cursor-guide §3.4 — CSS is injected conditionally inside the
+          cursor useEffect after the (pointer: fine) guard; removed from JSX */}
     </>
   );
 }
