@@ -1,7 +1,6 @@
 import SiteHeader from '@/components/layout/SiteHeader';
 import SiteFooter from '@/components/layout/SiteFooter';
 import HeroSection from '@/components/sections/HeroSection';
-import DynamicScrollVideo from '@/components/ui/DynamicScrollVideo';
 import WorkSection from '@/components/sections/WorkSection';
 import ProcessSection from '@/components/sections/ProcessSection';
 import AboutSection from '@/components/sections/AboutSection';
@@ -14,7 +13,6 @@ export default function Home() {
       <SiteHeader />
       <main>
         <HeroSection />
-        <DynamicScrollVideo />
         <WorkSection />
         <ProcessSection />
         <AboutSection />

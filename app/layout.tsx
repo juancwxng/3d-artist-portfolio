@@ -1,21 +1,21 @@
 import type { Metadata } from 'next';
-import { Cormorant_Garamond, DM_Sans } from 'next/font/google';
+import { Playfair_Display, Jost } from 'next/font/google';
 import './globals.css';
 import { siteTitle, siteDescription } from '@/data/portfolio';
 import PremiumEffects from '@/components/ui/PremiumEffects';
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   subsets: ['latin'],
   weight: ['300', '400'],
   style: ['italic', 'normal'],
-  variable: '--font-cormorant',
+  variable: '--font-playfair',
   display: 'swap',
 });
 
-const dmSans = DM_Sans({
+const jost = Jost({
   subsets: ['latin'],
-  weight: ['300', '400', '500'],
-  variable: '--font-dm-sans',
+  weight: ['300', '400'],
+  variable: '--font-jost',
   display: 'swap',
 });
 
@@ -30,7 +30,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
+    <html
+      lang="en"
+      className={`${playfair.variable} ${jost.variable}`}
+      style={
+        {
+          '--font-cormorant': 'var(--font-playfair)',
+          '--font-dm-sans': 'var(--font-jost)',
+        } as React.CSSProperties
+      }
+    >
       <body>
         <PremiumEffects />
         {children}
