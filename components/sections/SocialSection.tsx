@@ -2,17 +2,11 @@ import {
   socialEyebrow,
   socialTitle,
   socialIntro,
-  pinterestLabel,
+  behanceLabel,
   instagramLabel,
-  pinThumbs,
+  behanceThumbs,
   igThumbs,
 } from '@/data/portfolio';
-
-const pinBg: Record<string, string> = {
-  'pin-1': 'linear-gradient(160deg, #cdc0b6, #b8a898)',
-  'pin-2': 'linear-gradient(160deg, #b8c9b0, #9aae90)',
-  'pin-3': 'linear-gradient(160deg, #d4b8b5, #c09090)',
-};
 
 export default function SocialSection() {
   return (
@@ -41,29 +35,22 @@ export default function SocialSection() {
       </div>
 
       {/* Platforms grid */}
-      <div className="grid grid-cols-[1fr_1.4fr] gap-14 max-md:grid-cols-1 max-md:gap-10">
-        
-        {/* Pinterest */}
+      <div className="grid grid-cols-1 md:grid-cols-[1fr_1.4fr] gap-10 md:gap-14">
+
+        {/* Behance */}
         <div>
           <p className="text-[0.625rem] tracking-[0.3em] uppercase text-[#7a6e63] flex items-center gap-2 mb-4">
-            {pinterestLabel}
+            {behanceLabel}
           </p>
           <div
-            aria-label="Pinterest board preview"
+            aria-label="Behance portfolio preview"
             className="grid grid-cols-2 gap-2"
           >
-            {pinThumbs.map((pin) => (
+            {behanceThumbs.map((item: { label?: string }, i: number) => (
               <div
-                key={pin.label}
-                className={`rounded-[6px] relative overflow-hidden w-full ${
-                  pin.tall ? 'row-span-2 h-full' : 'aspect-[4/3] xs:aspect-[5/4]'
-                }`}
-                style={{ background: pinBg[pin.bgClass] }}
-              >
-                <span className="absolute bottom-2 left-2 text-[0.5625rem] tracking-[0.3em] uppercase bg-[rgba(43,42,39,0.65)] text-[#f7f3ee] px-[0.55rem] py-[0.2rem] rounded-full">
-                  {pin.label}
-                </span>
-              </div>
+                key={item.label || i}
+                className="aspect-[4/3] bg-[#d9cbbe] rounded-[4px] relative overflow-hidden w-full"
+              />
             ))}
           </div>
         </div>
