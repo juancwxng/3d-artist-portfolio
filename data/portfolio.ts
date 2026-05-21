@@ -136,55 +136,245 @@ export const detailedProjects: ProjectDetail[] = [
   {
     slug: "office-moscow",
     title: "Office Complex Moscow",
-    category: "Commercial",
+    category: "Commercial Interior",
     location: "Moscow, Russia",
     year: "2023",
     description:
       "A 4,200 m² commercial headquarters designed to project authority through restraint — travertine floors, brushed-brass joinery, and cathedral-height atria rendered across twelve camera studies to guide the client's design approval process.",
     media: [
-      // Add real project media here
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_1.webp",
+        alt: "Main reception — primary camera study",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_1_1.webp",
+        alt: "Reception — wide establishing shot",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_2.webp",
+        alt: "Office floor — workstation layout",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_3.webp",
+        alt: "Office floor — alternative angle",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_4.webp",
+        alt: "Corridor — ambient light study",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_5.webp",
+        alt: "Corridor — natural light study",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_6.webp",
+        alt: "Meeting room — north elevation",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_7.webp",
+        alt: "Meeting room — south elevation",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_8.webp",
+        alt: "Executive suite — overview",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_9.webp",
+        alt: "Executive suite — detail",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_10.webp",
+        alt: "Lounge area — dusk render",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_11.webp",
+        alt: "Lounge area — daytime render",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_12.webp",
+        alt: "Breakout space",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_13.webp",
+        alt: "Entrance lobby",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Office-Complex/Office-Complex_14.webp",
+        alt: "Atrium — full-height view",
+        layoutHint: "full",
+      },
     ],
   },
   {
     slug: "garden-spa",
     title: "Garden Spa",
-    category: "Landscape",
+    category: "Landscape & Exterior",
     location: "Private residence",
     year: "2023",
     description:
       "A private spa garden conceived as a series of outdoor rooms: the pool terrace, the shade pavilion, and the kitchen garden. Every planting scheme, stone selection, and water feature was resolved in 3D before a single plant was ordered.",
     media: [
-      // Add real project media here
+      // Add media here when images are available
     ],
   },
   {
     slug: "luxury-flat",
     title: "Luxury Flat, Tverskaya",
-    category: "Residential",
-    location: "Central Moscow",
+    category: "Residential Interior",
+    location: "Tverskaya, Moscow",
     year: "2024",
     description:
       "A 180 m² apartment in Moscow's most sought-after address. The brief called for restrained luxury — Arabescato marble, bouclé upholstery, and floor-to-ceiling glazing — resolved across nine final renders and one cinematic walkthrough.",
     media: [
       {
         type: "image",
-        src: "/projects/luxury-flat/placeholder.jpg",
-        caption:
-          "The pre-dawn render was the client's specific request — they wanted to see how the room felt at 5 a.m., when the city light is a thin grey ribbon on the horizon and the room belongs entirely to itself.",
+        src: "/projects/Apartment-Interior/Apartment-Interior_1.webp",
+        alt: "Living room — primary camera study",
         layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_2.webp",
+        alt: "Open-plan overview — horizontal",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_3.webp",
+        alt: "Hallway — entry sequence",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_4.webp",
+        alt: "Living room — afternoon light",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_5.webp",
+        alt: "Bedroom — narrow format study",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_6.webp",
+        alt: "Kitchen — horizontal overview",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_7.webp",
+        alt: "Living room — wide establishing shot",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_8.webp",
+        alt: "Dining area — overhead angle",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_9.webp",
+        alt: "Living room — square format",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_10.webp",
+        alt: "Bedroom — square format",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_11.webp",
+        alt: "Study nook",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_12.webp",
+        alt: "Wardrobe — detail study",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_13.webp",
+        alt: "Ceiling detail — wide crop",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_14.webp",
+        alt: "Bathroom — primary view",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_15.webp",
+        alt: "Bathroom — vanity detail",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_16.webp",
+        alt: "Bathroom — minimal crop",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_17.webp",
+        alt: "Bedroom — evening render",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Apartment-Interior/Apartment-Interior_18.webp",
+        alt: "Bedroom — minimal crop",
+        layoutHint: "half",
       },
     ],
   },
   {
     slug: "law-firm-buffet",
     title: "Law Firm Buffet",
-    category: "Commercial",
-    location: "Premium F&B interior",
+    category: "F&B Interior",
+    location: "Central Moscow",
     year: "2025",
     description:
       "An in-house dining and hospitality suite for a prominent law firm, currently in production. Material directions under review — two tile options and three lighting scenarios are being evaluated ahead of the final client presentation.",
     media: [
-      // Add real project media here
+      // Add media here when images are available
     ],
   },
 ];
