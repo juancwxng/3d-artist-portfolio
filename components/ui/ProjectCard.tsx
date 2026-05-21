@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import type { KeyboardEvent } from 'react';
+import Link from 'next/link';
 import type { Project, TagVariant } from '@/types';
 import { cn } from '@/lib/utils';
 
@@ -18,13 +18,6 @@ function tagClass(variant: TagVariant): string {
 export default function ProjectCard({ project }: ProjectCardProps) {
   const { name, sub, year, tags, imgStyle, imgLabel, featured, id } = project;
 
-  const handleKeyDown = (e: KeyboardEvent<HTMLElement>) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      (e.currentTarget as HTMLElement).click();
-    }
-  };
-
   const hasImage = imgStyle.startsWith('/') || imgStyle.startsWith('http');
   const bgValue = imgStyle
     .replace(/^background:\s*/i, '')
@@ -32,15 +25,14 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     .trim();
 
   return (
-    <article
+    <Link
+      href={`/work/${id}`}
       className={cn(
-        'project-card group relative flex flex-col bg-[#ede5dc] rounded-[6px] overflow-hidden cursor-pointer',
+        'project-card group relative flex flex-col bg-[#ede5dc] rounded-[6px] overflow-hidden cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#d4a0a4] focus-visible:ring-offset-2 focus-visible:ring-offset-[#f7f3ee]',
         featured && 'col-span-full grid grid-cols-[1.35fr_1fr] max-md:grid-cols-1',
       )}
-      tabIndex={0}
       data-cursor="view"
-      onKeyDown={handleKeyDown}
-      aria-label={`${name.replace(/\n/g, ' ')} — ${sub}`}
+      aria-label={`View case study: ${name.replace(/\n/g, ' ')} — ${sub}`}
     >
       {/* Image area */}
       <div
@@ -58,21 +50,24 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             alt={imgLabel}
             fill
             sizes="(max-width: 768px) 100vw, 50vw"
-            className="object-cover transition-[clip-path] duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)]"
-            style={{
-              clipPath: 'inset(0% 0% 0% 0%)',
-            }}
+            className="object-cover transition-transform duration-[700ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.035]"
           />
         ) : (
           <div
             aria-label={imgLabel}
-            className="absolute inset-0 transition-[clip-path] duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:[clip-path:inset(4%_4%_4%_4%_round_2px)]"
+            className="absolute inset-0 transition-[clip-path,transform] duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:[clip-path:inset(4%_4%_4%_4%_round_2px)]"
             style={{
               background: bgValue,
               clipPath: 'inset(0% 0% 0% 0%)',
             }}
           />
         )}
+
+        {/* Subtle warm scrim on hover — deepens the image without darkening aggressively */}
+        <div
+          className="absolute inset-0 bg-[#2b2a27] opacity-0 transition-opacity duration-[600ms] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:opacity-[0.06] pointer-events-none"
+          aria-hidden="true"
+        />
       </div>
 
       {/* Project body */}
@@ -102,7 +97,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         {/* Name */}
         <h3
           className={cn(
-            'font-serif font-normal text-[#2b2a27] leading-[1.2] mb-[0.4rem]',
+            'font-serif font-normal text-[#2b2a27] leading-[1.2] mb-[0.4rem] transition-colors duration-300 group-hover:text-[#3d3830]',
             featured ? 'text-[1.75rem] xs:text-[1.375rem]' : 'text-[1.25rem]',
           )}
         >
@@ -129,6 +124,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           </span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }
