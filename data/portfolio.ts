@@ -254,11 +254,11 @@ export const aboutStats: AboutStat[] = [
 export const socialEyebrow = "Find me online";
 export const socialTitle = "Work in progress";
 export const socialIntro =
-  "I post renders, material studies, and finished projects on Pinterest and Instagram. Both are good places to see what's coming before it lands here.";
-export const pinterestLabel = "📌\u00a0 Pinterest";
+  "I post renders, material studies, and finished projects on Behance and Instagram. Both are good places to see what's coming before it lands here.";
+export const behanceLabel = "Bē\u00a0 Behance";
 export const instagramLabel = "📷\u00a0 Instagram";
 
-export const pinThumbs: PinThumb[] = [
+export const behanceThumbs: PinThumb[] = [
   { label: "Interior", bgClass: "pin-1", tall: true },
   { label: "Garden", bgClass: "pin-2" },
   { label: "Facade", bgClass: "pin-3" },
@@ -296,7 +296,7 @@ export const contactMeta: ContactMetaItem[] = [
 ];
 
 export const contactSocials = [
-  { label: "Pinterest", href: "#" },
+  { label: "Behance", href: "#" },
   { label: "Instagram", href: "#" },
   { label: "LinkedIn", href: "#" },
 ];
