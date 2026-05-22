@@ -91,7 +91,7 @@ export const projects: Project[] = [
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(43,42,39,0.35) 0%, rgba(43,42,39,0.05) 100%), repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 28px), #c2b2a5",
+      "/projects/Office-Complex/Office-Complex_1.webp",
   },
   {
     id: "luxury-flat",
@@ -102,7 +102,7 @@ export const projects: Project[] = [
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
     imgStyle:
-      "linear-gradient(155deg, rgba(232,197,192,0.25) 0%, rgba(43,42,39,0.1) 100%), #c4b0ae",
+      "/projects/Apartment-Interior/Apartment-Interior_1.webp",
   },
   {
     id: "slavic-sauna",
@@ -113,7 +113,7 @@ export const projects: Project[] = [
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(160,100,70,0.3) 0%, rgba(43,42,39,0.08) 100%), #c4a882",
+      "/projects/Slavic-Sauna/Slavic-Sauna_1.webp",
   },
   {
     id: "lake-house",
@@ -124,7 +124,7 @@ export const projects: Project[] = [
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(80,110,140,0.3) 0%, rgba(43,42,39,0.05) 100%), #a0b8c8",
+      "/projects/Lake-House_Exterior/Lake-House_Exterior_1.webp",
   },
   {
     id: "linear-park",
@@ -135,7 +135,7 @@ export const projects: Project[] = [
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(100,130,80,0.3) 0%, rgba(43,42,39,0.05) 100%), #a8c090",
+      "/projects/Linear-Park/Linear-Park_1.webp",
   },
   {
     id: "city-park-chekhov",
@@ -146,7 +146,7 @@ export const projects: Project[] = [
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(120,150,90,0.25) 0%, rgba(43,42,39,0.05) 100%), #b0c4a0",
+      "/projects/City-Park_Chekhov/City-Park_Chekhov_1.webp",
   },
   {
     id: "modern-chalet",
@@ -157,7 +157,7 @@ export const projects: Project[] = [
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(180,150,110,0.3) 0%, rgba(43,42,39,0.08) 100%), #c8b090",
+      "/projects/Various/Modern-Chalet_Daytime.webp",
   },
   {
     id: "warsaw-house",
@@ -168,7 +168,7 @@ export const projects: Project[] = [
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(100,95,85,0.25) 0%, rgba(43,42,39,0.05) 100%), #b8b4ac",
+      "/projects/Various/warsaw-house.webp",
   },
   {
     id: "mexican-house",
@@ -179,7 +179,7 @@ export const projects: Project[] = [
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(180,130,80,0.3) 0%, rgba(43,42,39,0.08) 100%), #c8a888",
+      "/projects/Various/Mexican-House.webp",
   },
   {
     id: "apartment-tower-mexico",
@@ -190,7 +190,7 @@ export const projects: Project[] = [
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
     imgStyle:
-      "linear-gradient(135deg, rgba(80,100,130,0.3) 0%, rgba(43,42,39,0.05) 100%), #a8b0c0",
+      "/projects/Various/Apartment-Tower_Mexico.webp",
   },
   {
     id: "apt1",
@@ -201,7 +201,7 @@ export const projects: Project[] = [
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
     imgStyle:
-      "linear-gradient(155deg, rgba(160,130,110,0.25) 0%, rgba(43,42,39,0.08) 100%), #c0b0a8",
+      "/projects/Various/apt1_living-room.webp",
   },
   {
     id: "garden-spa",
@@ -576,49 +576,49 @@ export const detailedProjects: ProjectDetail[] = [
     media: [
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_1.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_1.webp",
         alt: "Viewpoint 1 — primary approach",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_2.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_2.webp",
         alt: "Viewpoint 2 — lakeside elevation",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_4.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_4.webp",
         alt: "Viewpoint 4 — garden terrace",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_5.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_5.webp",
         alt: "Viewpoint 5 — water's edge",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_6.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_6.webp",
         alt: "Viewpoint 6 — entry sequence",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_7.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_7.webp",
         alt: "Viewpoint 7 — dusk render",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_8.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_8.webp",
         alt: "Viewpoint 8 — evening render",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_9.webp",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_9.webp",
         alt: "Viewpoint 9 — night render",
         layoutHint: "full",
       },

@@ -5,9 +5,13 @@ import { notFound, useParams } from "next/navigation";
 import Link from "next/link";
 import { getProject } from "@/data/portfolio";
 import type { MediaItem } from "@/data/portfolio";
-import Lightbox from "@/components/ui/Lightbox";
+import YALightbox from "yet-another-react-lightbox";
+import "yet-another-react-lightbox/styles.css";
+import Zoom from "yet-another-react-lightbox/plugins/zoom";
+import Captions from "yet-another-react-lightbox/plugins/captions";
+import "yet-another-react-lightbox/plugins/captions.css";
 
-/*  ZOOMABLE IMAGE — opens the shared Lightbox with a single image  */
+/*  ZOOMABLE IMAGE — opens yet-another-react-lightbox  */
 function ZoomableImage({
   src,
   alt = "",
@@ -29,12 +33,17 @@ function ZoomableImage({
         style={{ display: "block" }}
         onClick={() => setOpen(true)}
       />
-      {open && (
-        <Lightbox
-          images={[{ src, alt }]}
-          onClose={() => setOpen(false)}
-        />
-      )}
+      <YALightbox
+        open={open}
+        close={() => setOpen(false)}
+        slides={[{ src, alt }]}
+        plugins={[Zoom, Captions]}
+        styles={{
+          root: { "--yarl__color_backdrop": "rgba(247, 243, 238, 0.97)" },
+        }}
+        carousel={{ finite: true }}
+        render={{ buttonPrev: () => null, buttonNext: () => null }}
+      />
     </>
   );
 }
