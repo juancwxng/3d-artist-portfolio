@@ -83,70 +83,64 @@ export const workAllLink = "All projects →";
 
 export const projects: Project[] = [
   {
-    id: "office-moscow",
-    name: "Office Complex\nMoscow",
+    id: "biophilic-office-campus",
+    name: "Biophilic Office Campus",
     sub: "Commercial · 4,200 m²",
     year: "2023",
     featured: true,
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
-    imgStyle:
-      "/projects/Office-Complex/Office-Complex_1.webp",
+    imgStyle: "/projects/Office-Complex/Office-Complex_1.webp",
   },
   {
-    id: "luxury-flat",
-    name: "Luxury Flat, Tverskaya",
-    sub: "Residential · Central Moscow",
+    id: "boutique-urban-apartment",
+    name: "Boutique Urban Apartment",
+    sub: "Residential",
     year: "2024",
     featured: false,
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
-    imgStyle:
-      "/projects/Apartment-Interior/Apartment-Interior_1.webp",
+    imgStyle: "/projects/Apartment-Interior/Apartment-Interior_1.webp",
   },
   {
     id: "slavic-sauna",
     name: "Slavic Sauna",
     sub: "Residential · Private wellness",
-    year: "2023",
+    year: "2025",
     featured: false,
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
-    imgStyle:
-      "/projects/Slavic-Sauna/Slavic-Sauna_1.webp",
+    imgStyle: "/projects/Slavic-Sauna/Slavic-Sauna_1.webp",
   },
   {
     id: "lake-house",
     name: "Lake House",
     sub: "Residential · Exterior",
-    year: "2024",
+    year: "2025",
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "/projects/Lake-House_Exterior/Lake-House_Exterior_1.webp",
+    imgStyle: "/projects/Lake-House_Exterior/Lake-House_Exterior_1.webp",
   },
   {
-    id: "linear-park",
-    name: "Linear Park",
-    sub: "Landscape · Public space",
+    id: "linear-public-park",
+    name: "Linear Public Park",
+    sub: "Landscape Architecture · Public Space",
     year: "2023",
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "/projects/Linear-Park/Linear-Park_1.webp",
+    imgStyle: "/projects/Linear-Park/Linear-Park_1.webp",
   },
   {
-    id: "city-park-chekhov",
-    name: "City Park\nChekhov",
-    sub: "Landscape · Public space",
+    id: "civic-heritage-park",
+    name: "Civic Heritage Park",
+    sub: "Landscape Architecture · Public Space",
     year: "2024",
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "/projects/City-Park_Chekhov/City-Park_Chekhov_1.webp",
+    imgStyle: "/projects/City-Park_Chekhov/City-Park_Chekhov_1.webp",
   },
   {
     id: "modern-chalet",
@@ -156,8 +150,7 @@ export const projects: Project[] = [
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "/projects/Various/Modern-Chalet_Daytime.webp",
+    imgStyle: "/projects/Various/Modern-Chalet_Daytime.webp",
   },
   {
     id: "warsaw-house",
@@ -167,8 +160,7 @@ export const projects: Project[] = [
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "/projects/Various/warsaw-house.webp",
+    imgStyle: "/projects/Various/warsaw-house.webp",
   },
   {
     id: "mexican-house",
@@ -178,8 +170,7 @@ export const projects: Project[] = [
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "/projects/Various/Mexican-House.webp",
+    imgStyle: "/projects/Various/Mexican-House.webp",
   },
   {
     id: "apartment-tower-mexico",
@@ -189,8 +180,7 @@ export const projects: Project[] = [
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "/projects/Various/Apartment-Tower_Mexico.webp",
+    imgStyle: "/projects/Various/Apartment-Tower_Mexico.webp",
   },
   {
     id: "apt1",
@@ -200,8 +190,7 @@ export const projects: Project[] = [
     featured: false,
     tags: [{ label: "Interior", variant: "interior" }],
     imgLabel: "Interior · 3D render",
-    imgStyle:
-      "/projects/Various/apt1_living-room.webp",
+    imgStyle: "/projects/Various/apt1_living-room.webp",
   },
   {
     id: "garden-spa",
@@ -232,331 +221,322 @@ export const projects: Project[] = [
 
 // ─── DYNAMIC PROJECTS (CASE STUDIES) ──────────────────────
 export const detailedProjects: ProjectDetail[] = [
-  // ── Office Complex Moscow ─────────────────────────────
+  // ── Office Complex ─────────────────────────────
   {
-    slug: "office-moscow",
-    title: "Office Complex Moscow",
+    slug: "biophilic-office-campus",
+    title: "Biophilic Office Campus",
     category: "Commercial Interior",
-    location: "Moscow, Russia",
+    location: "Corporate Headquarters",
     year: "2023",
     description:
-      "A 4,200 m² commercial headquarters designed to project authority through restraint — travertine floors, brushed-brass joinery, and cathedral-height atria rendered across twelve camera studies to guide the client's design approval process.",
+      "A 4,200 m² commercial headquarters designed around the principles of biophilic design. This expansive glass-roofed atrium functions as a thriving indoor ecosystem, seamlessly integrating collaborative workspaces, a central cafe, and leisure zones among lush tropical landscaping. The space was meticulously resolved across fourteen architectural visualizations.",
     media: [
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_1.webp",
-        alt: "Main reception — primary camera study",
-        layoutHint: "full",
-      },
-      {
-        type: "image",
-        src: "/projects/Office-Complex/Office-Complex_1_1.webp",
-        alt: "Reception — wide establishing shot",
+        alt: "Wide 3D interior rendering of a biophilic commercial atrium under a glass pyramid skylight, featuring lush tropical plants and a central fountain",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_2.webp",
-        alt: "Office floor — workstation layout",
-        layoutHint: "half",
+        alt: "Architectural visualization of a green office collaborative workspace, showing light wood tables, curved chairs, and integrated planters",
+        layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_3.webp",
-        alt: "Office floor — alternative angle",
+        alt: "3D rendering of a modern office atrium cafe featuring a concrete counter with copper accents, surrounded by indoor trees and foliage",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_4.webp",
-        alt: "Corridor — ambient light study",
+        alt: "Interior 3D visualization of a corporate wellness area with wooden lounge chairs and concrete planters in a bright, nature-inspired office",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_5.webp",
-        alt: "Corridor — natural light study",
+        alt: "Elevated 3D architectural rendering of a winding LED-lit pathway cutting through indoor grass lawns and tropical landscaping in a commercial atrium",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_6.webp",
-        alt: "Meeting room — north elevation",
+        alt: "Close-up 3D visualization of lush indoor tropical plants and modern pathway lighting bordering a concrete walkway in an office campus",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_7.webp",
-        alt: "Meeting room — south elevation",
+        alt: "Architectural rendering of an informal breakout space with terracotta bean bags arranged on wooden decking surrounded by greenery",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_8.webp",
-        alt: "Executive suite — overview",
+        alt: "3D interior rendering of a corporate recreation zone featuring table tennis setups on artificial turf within a glass-walled green atrium",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_9.webp",
-        alt: "Executive suite — detail",
-        layoutHint: "half",
+        alt: "Wide 3D visualization showing a bustling indoor office campus, highlighting a towering copper fountain and a rounded cafe bar",
+        layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_10.webp",
-        alt: "Lounge area — dusk render",
-        layoutHint: "half",
+        alt: "Top-down 3D architectural rendering of a symmetrical biophilic office atrium, detailing the layout of pathways, seating zones, and central water feature",
+        layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_11.webp",
-        alt: "Lounge area — daytime render",
+        alt: "Low-angle 3D visualization of a glowing LED floor path winding past tropical palms and a relaxing breakout zone with terracotta seating",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_12.webp",
-        alt: "Breakout space",
+        alt: "Close-up 3D interior rendering of a corporate coffee bar, showing an espresso machine, dark marble tables, and upholstered bar stools",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_13.webp",
-        alt: "Entrance lobby",
+        alt: "High-angle 3D architectural rendering of a central bronze fountain structure anchoring a sprawling, light-filled green office atrium",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Office-Complex/Office-Complex_14.webp",
-        alt: "Atrium — full-height view",
+        alt: "Eye-level 3D visualization looking up at a monumental geometric water feature and the expansive glass pyramid roof of a modern office complex",
         layoutHint: "full",
       },
     ],
   },
 
-  // ── Luxury Flat, Tverskaya ────────────────────────────
+  // ── Boutique Urban Apartment ────────────────────────────
   {
-    slug: "luxury-flat",
-    title: "Luxury Flat, Tverskaya",
+    slug: "boutique-urban-apartment",
+    title: "Boutique Urban Apartment",
     category: "Residential Interior",
-    location: "Tverskaya, Moscow",
+    location: "Private Residence",
     year: "2024",
     description:
-      "A 180 m² apartment in Moscow's most sought-after address. The brief called for restrained luxury — Arabescato marble, bouclé upholstery, and floor-to-ceiling glazing — resolved across nine final renders and one cinematic walkthrough.",
+      "A thoughtfully crafted urban apartment characterized by its tailored contemporary design. The interior features bespoke light oak joinery, cozy modern upholstery, and vibrant geometric tiling, seamlessly resolved across eighteen detailed 3D architectural visualizations.",
     media: [
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_1.webp",
-        alt: "Living room — primary camera study",
+        alt: "3D interior rendering of a modern kitchen featuring light oak cabinetry, geometric floor tiles, and a white tile backsplash",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_2.webp",
-        alt: "Open-plan overview — horizontal",
+        alt: "Architectural visualization of a contemporary open-plan kitchen with built-in appliances, a breakfast bar, and ample natural light",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_3.webp",
-        alt: "Hallway — entry sequence",
+        alt: "Close-up 3D render of a kitchen breakfast bar by the window, styled with a laptop, notebook, and a gray velvet bar stool",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_4.webp",
-        alt: "Living room — afternoon light",
+        alt: "3D visualization of a cozy reading nook in a residential apartment, featuring a curved blue armchair, a black side table, and vibrant textile art",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_5.webp",
-        alt: "Bedroom — narrow format study",
+        alt: "Interior rendering of a shared children's bedroom with twin beds, a custom wooden double desk under a large window, and a modern sputnik chandelier",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_6.webp",
-        alt: "Kitchen — horizontal overview",
+        alt: "3D architectural visualization of a kids' bedroom showing a fluted dresser, a round brass mirror, and built-in floor-to-ceiling bookshelves",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_7.webp",
-        alt: "Living room — wide establishing shot",
+        alt: "High-end 3D rendering of a serene master bedroom featuring a wooden platform bed, a slatted wood headboard, and a delicate leaf-motif chandelier",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_8.webp",
-        alt: "Dining area — overhead angle",
+        alt: "Interior visualization of a bedroom corner showing a draped beige curtain room divider, a teal accent chair, and dark oak flooring",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_9.webp",
-        alt: "Living room — square format",
+        alt: "3D rendering of a bespoke walk-in wardrobe within a master bedroom, featuring open shelving, hanging rails, and custom white drawers",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_10.webp",
-        alt: "Bedroom — square format",
+        alt: "Architectural visualization of an open-plan living room featuring a grey sofa, dark oak floors, a slatted wood divider, and a modern globe chandelier",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_11.webp",
-        alt: "Study nook",
+        alt: "3D interior rendering of a cozy dining area with a round wooden table, four mid-century modern chairs, and a bright window with roman shades",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_12.webp",
-        alt: "Wardrobe — detail study",
+        alt: "Wide 3D visualization of a luxury living and dining space showing a grey sofa, floral framed artwork, and white louvered closet doors",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_13.webp",
-        alt: "Ceiling detail — wide crop",
+        alt: "Interior 3D rendering of an entryway hall featuring a two-toned white and sage green wall, a rustic wooden console table, and a family photo gallery",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_14.webp",
-        alt: "Bathroom — primary view",
+        alt: "Architectural visualization of an apartment corridor showing a mirrored sliding wardrobe, a white fluted shoe cabinet, and transition flooring",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_15.webp",
-        alt: "Bathroom — vanity detail",
+        alt: "3D rendering of a residential hallway highlighting built-in louvered closets, a classic white paneled door, and patterned floor tiles",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_16.webp",
-        alt: "Bathroom — minimal crop",
+        alt: "High-end 3D interior visualization of a modern bathroom featuring a curved glass shower, a white floating vanity, and a round LED-backlit mirror",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_17.webp",
-        alt: "Bedroom — evening render",
+        alt: "Bathroom interior rendering showcasing custom light wood paneling, a wall-hung toilet, an open shelving unit with a curtain, and geometric terracotta tiles",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Apartment-Interior/Apartment-Interior_18.webp",
-        alt: "Bedroom — minimal crop",
+        alt: "3D architectural rendering of a modern bathroom wall featuring a sleek black heated towel rail, a white bathrobe, and a wall-mounted toilet",
         layoutHint: "half",
       },
     ],
   },
 
   // ── Slavic Sauna ──────────────────────────────────────
-  // Portrait pairs: _1+_2, _3+_4, _5+_6, _7+_8, _9+_10, _12+_13
-  // Landscape fulls: _11, _14
-  // _10_2 is an alternate take of _10 — rendered full-width as the odd one out
   {
     slug: "slavic-sauna",
-    title: "Slavic Sauna",
+    title: "Slavic Sauna Interior",
     category: "Residential Interior",
     location: "Private residence",
-    year: "2023",
+    year: "2025",
     description:
-      "A private wellness retreat designed around the ritual of the banya — raw timber, steam, and stone resolved across fourteen camera studies before construction began.",
+      "High-end 3D interior rendering of a traditional Slavic banya. This architectural visualization showcases a luxury wellness retreat, beautifully harmonizing rustic raw timber with sophisticated modern finishes like green marble. Meticulously resolved across fourteen camera studies to capture an exclusive lakeside sanctuary.",
     media: [
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_1.webp",
-        alt: "Main hall — wide establishing shot",
+        alt: "3D interior rendering of a luxury traditional Slavic banya, featuring illuminated tiered wooden seating and a bespoke log cross-section ceiling art piece",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_2.webp",
-        alt: "Main hall — frontal view",
+        alt: "Architectural visualization of a luxury sauna room highlighting a modern cylindrical stone heater, rugged accent wall, and integrated warm LED lighting",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_3.webp",
-        alt: "Steam room — primary angle",
+        alt: "High-end 3D rendering of a luxury banya bathroom, contrasting raw timber log walls with elegant green-veined marble and brushed brass fixtures",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_4.webp",
-        alt: "Steam room — narrow format",
+        alt: "Interior 3D visualization of a spa-like shower room featuring glossy green subway tiles, a traditional wooden plunge bucket, and brass hardware",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_5.webp",
-        alt: "Changing room",
+        alt: "Architectural rendering of a wellness retreat corridor showcasing raw timber log walls, a frosted glass sauna door, and a rich green velvet curtain",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_6.webp",
-        alt: "Lounge area",
+        alt: "3D interior visualization of a rustic modern banya space, featuring a decorative slatted wood wall panel adorned with hanging greenery",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_7.webp",
-        alt: "Rest area",
+        alt: "Entrance mudroom of a private lakeside banya, showcasing a modern upholstered bench, organic-shaped mirror, and heavy timber log architecture",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_8.webp",
-        alt: "Hot room — timber detail",
+        alt: "High-end 3D rendering of a serene banya relaxation lounge, featuring a plush sofa, abstract artwork, and contemporary wavy glass pendant lighting",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_9.webp",
-        alt: "Hot room — bench level",
+        alt: "Architectural visualization of a cozy wellness retreat lounge area, highlighting bespoke rattan wardrobes, comfortable seating, and rustic log walls",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_10.webp",
-        alt: "Hot room — elevated angle",
+        alt: "Detail shot of a 3D interior rendering showing custom woven rattan cabinetry and a modern green accent chair in a luxury wellness lounge",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_10_2.webp",
-        alt: "Hot room — alternate take",
+        alt: "Alternate 3D visualization angle of a traditional banya lounge area, focusing on the intricate rattan joinery and detailed geometric parquet flooring",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_11.webp",
-        alt: "Exterior terrace — overview",
+        alt: "3D rendering of a banya relaxation room looking out through large glass sliding doors towards an outdoor courtyard, featuring a traditional green tiled stove",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_12.webp",
-        alt: "Corridor — detail",
+        alt: "Close-up 3D architectural visualization of a polished metal sauna bucket and wooden ladles sitting on illuminated timber benches",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_13.webp",
-        alt: "Corridor — ambient light",
+        alt: "Detailed 3D rendering of an asymmetrical wooden coffee table in a banya lounge, styled with magazines, refreshments, and a traditional stove in the background",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Slavic-Sauna/Slavic-Sauna_14.webp",
-        alt: "Exterior — full view",
+        alt: "Top-down 3D floor plan rendering of a luxury private banya retreat, illustrating the cohesive spatial layout of the sauna, shower, lounge, and bathroom zones",
         layoutHint: "full",
       },
     ],
@@ -564,207 +544,202 @@ export const detailedProjects: ProjectDetail[] = [
 
   // ── Lake House Exterior ───────────────────────────────
   // All images are 3840x2040 landscape — all full-width
-  // Note: Cyrillic filenames (видовая точка = viewpoint); _3 is missing from the export
   {
     slug: "lake-house",
-    title: "Lake House",
+    title: "Lakeside Estate",
     category: "Residential Exterior",
     location: "Private residence",
-    year: "2024",
+    year: "2025",
     description:
-      "A lakeside residence captured across eight viewpoints — dawn to dusk — to demonstrate how the building settles into its waterfront site at every hour of the day.",
+      "High-end 3D exterior visualization of a classical luxury lakeside estate in Poland. This architectural rendering showcases a comprehensive residential master plan, featuring a grand main house, a detached garage, and waterfront pavilions. Set against lush woodland, the design seamlessly bridges formal elegance with expansive outdoor spaces, perfectly resolving intricate rooflines and landscape zoning.",
     media: [
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_1.webp",
-        alt: "Viewpoint 1 — primary approach",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_1.webp",
+        alt: "3D exterior rendering of a luxury lakeside estate in Poland, featuring a classical white stucco facade and domed roof",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_2.webp",
-        alt: "Viewpoint 2 — lakeside elevation",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_2.webp",
+        alt: "3D visualization of a private courtyard pool and lounge area at a luxury lakeside mansion, surrounded by manicured gardens",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_4.webp",
-        alt: "Viewpoint 4 — garden terrace",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_3.webp",
+        alt: "Architectural rendering of a classical detached guest house and carport nestled in the lush landscaping of a lakeside estate",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_5.webp",
-        alt: "Viewpoint 5 — water's edge",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_4.webp",
+        alt: "Wrought-iron driveway gate and classical front entrance of a high-end waterfront property, showcasing detailed 3D landscaping",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_6.webp",
-        alt: "Viewpoint 6 — entry sequence",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_5.webp",
+        alt: "Front facade 3D visualization of a classical residential estate, featuring elegant arched windows, balconies, and white stucco",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_7.webp",
-        alt: "Viewpoint 7 — dusk render",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_6.webp",
+        alt: "Angled aerial 3D rendering of a sprawling lakeside master plan, detailing the residential architecture and waterfront pavilions",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_8.webp",
-        alt: "Viewpoint 8 — evening render",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_7.webp",
+        alt: "Waterfront 3D architectural visualization of a luxury estate, highlighting a private sandy beach, boat dock, and fire pit area",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_9.webp",
-        alt: "Viewpoint 9 — night render",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_8.webp",
+        alt: "Top-down overhead rendering of a cohesive residential master plan, showing the spatial layout of the house, pool, and lake access",
         layoutHint: "full",
       },
     ],
   },
 
   // ── Linear Park ──────────────────────────────────────
-  // _1 and _4 are portrait (1915x2500) — pair them
-  // All others are wide landscape — full-width
   {
-    slug: "linear-park",
-    title: "Linear Park",
-    category: "Landscape & Exterior",
-    location: "Public space",
+    slug: "linear-public-park",
+    title: "Linear Public Park",
+    category: "Landscape Architecture & Urban Design",
+    location: "Urban Public Space",
     year: "2023",
     description:
-      "A linear public park resolved across eight viewpoints — from the entry pavilion to the far promenade — testing material palettes, planting density, and seasonal light before groundwork began.",
+      "A comprehensive 3D architectural visualization of a modern linear public park. This urban landscape design features vibrant pedestrian promenades, bespoke seating structures, interactive art installations, and lush seasonal planting. The project was rigorously resolved across eight renders to evaluate lighting, material palettes, and spatial flow before groundwork began.",
     media: [
       {
         type: "image",
         src: "/projects/Linear-Park/Linear-Park_1.webp",
-        alt: "Entry pavilion — portrait view",
-        layoutHint: "half",
-      },
-      {
-        type: "image",
-        src: "/projects/Linear-Park/Linear-Park_4.webp",
-        alt: "Pavilion — alternate angle",
+        alt: "3D rendering of a modern urban park promenade featuring a wooden pergola with illuminated hanging egg chairs and lush landscaping",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Linear-Park/Linear-Park_2.webp",
-        alt: "Promenade — wide establishing shot",
+        alt: "Top-down 3D architectural visualization of a linear park master plan, showcasing geometric pedestrian pathways and dense urban tree canopies",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Linear-Park/Linear-Park_3.webp",
-        alt: "Central zone — planting study",
+        alt: "Angled aerial 3D render of a linear landscape design, illustrating the integration of public green spaces, seating zones, and walkways along an urban road",
         layoutHint: "full",
       },
       {
         type: "image",
+        src: "/projects/Linear-Park/Linear-Park_4.webp",
+        alt: "3D visualization of bespoke heart-shaped seating structures with integrated LED lighting along a paved public park walkway",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
         src: "/projects/Linear-Park/Linear-Park_5.webp",
-        alt: "Seating area — afternoon light",
+        alt: "Architectural exterior rendering of an urban park pathway framed by striking illuminated contemporary archways and autumnal trees",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Linear-Park/Linear-Park_6.webp",
-        alt: "Promenade — dusk render",
-        layoutHint: "full",
+        alt: "3D landscape rendering of a pedestrian promenade highlighting a modern metallic heart sculpture set against vibrant green public lawns",
+        layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Linear-Park/Linear-Park_7.webp",
-        alt: "Far end — panoramic view",
-        layoutHint: "full",
+        alt: "Exterior 3D visualization of a modern refreshment kiosk at a park entrance, featuring native planting, bicycle access, and elegant metal fencing",
+        layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Linear-Park/Linear-Park_8.webp",
-        alt: "Boundary — panoramic view",
-        layoutHint: "full",
+        alt: "Ground-level 3D rendering of a wide, accessible linear park promenade with sophisticated street lighting and dense, layered shrubbery",
+        layoutHint: "half",
       },
     ],
   },
 
-  // ── City Park Chekhov ─────────────────────────────────
-  // All wide landscape except _5 which is portrait (2404x2984) — rendered full since no pair
+  // ── Civic Heritage Park ─────────────────────────────────
   {
-    slug: "city-park-chekhov",
-    title: "City Park Chekhov",
-    category: "Landscape & Exterior",
-    location: "Chekhov, Russia",
+    slug: "civic-heritage-park",
+    title: "Civic Heritage Park",
+    category: "Landscape Architecture & Urban Design",
+    location: "Municipal Public Space",
     year: "2024",
     description:
-      "A municipal park in Chekhov rendered across six camera angles to demonstrate the spatial progression from the main entrance to the central amphitheatre.",
+      "A comprehensive 3D landscape visualization of a municipal heritage park. The master plan thoughtfully integrates a classical civic building with formal geometric gardens, meandering wildflower promenades, and modern amenities like bespoke swing pavilions. The project was meticulously rendered across six panoramic angles to demonstrate spatial progression and seasonal planting strategies.",
     media: [
       {
         type: "image",
-        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_1.webp",
-        alt: "Main entrance — panoramic",
+        src: "/projects/Civic-Heritage-Park/Civic-Heritage-Park_1.webp",
+        alt: "3D architectural visualization of a classic municipal park plaza, featuring curved seating, a vintage black lamppost, and vibrant seasonal landscaping",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_2.webp",
-        alt: "Central promenade",
+        src: "/projects/Civic-Heritage-Park/Civic-Heritage-Park_2.webp",
+        alt: "Exterior landscape rendering of a wide pedestrian park promenade bordered by fields of purple flowers, birch trees, and modern wooden benches",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_3.webp",
-        alt: "Path network — wide view",
+        src: "/projects/Civic-Heritage-Park/Civic-Heritage-Park_3.webp",
+        alt: "Ground-level 3D visualization of a formal central promenade leading to a classical civic building, lined with manicured hedges and tall evergreen trees",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_4.webp",
-        alt: "Path network — alternate angle",
+        src: "/projects/Civic-Heritage-Park/Civic-Heritage-Park_4.webp",
+        alt: "Angled aerial 3D landscape rendering showcasing a geometric park master plan, with radiating pathways converging at a historic municipal building",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_5.webp",
-        alt: "Amphitheatre — portrait view",
+        src: "/projects/Civic-Heritage-Park/Civic-Heritage-Park_5.webp",
+        alt: "Top-down orthographic 3D visualization of an urban park layout, detailing the structured landscaping, civic architecture, and a circular seating plaza",
         layoutHint: "full",
       },
       {
         type: "image",
-        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_6.webp",
-        alt: "Far boundary — panoramic",
+        src: "/projects/Civic-Heritage-Park/Civic-Heritage-Park_6.webp",
+        alt: "3D exterior rendering of modern white perforated swing pavilions situated along a bright, tree-lined pedestrian walkway in a public park",
         layoutHint: "full",
       },
     ],
   },
 
   // ── Modern Chalet ─────────────────────────────────────
-  // All 3733×2100 landscape — full-width
   {
     slug: "modern-chalet",
     title: "Modern Chalet",
     category: "Residential Exterior",
-    location: "Private residence",
+    location: "Private Residence",
     year: "2024",
     description:
-      "A contemporary alpine chalet rendered at three times of day — daytime overcast, golden-hour sunset, and poolside dusk — to demonstrate how the facade and landscape read across the full arc of natural light.",
+      "A comprehensive 3D exterior visualization of a contemporary A-frame alpine chalet. The architectural rendering highlights a sophisticated material palette of horizontal timber siding, clean white stucco, and a rustic stone base. The project serves as an advanced lighting study, beautifully demonstrating how the facade, extensive glass windows, and poolside landscape transform across bright daytime, golden hour, and dusk.",
     media: [
       {
         type: "image",
         src: "/projects/Various/Modern-Chalet_Daytime.webp",
-        alt: "Daytime — overcast light",
+        alt: "3D architectural visualization of a modern A-frame chalet exterior in bright daylight, showcasing timber siding, large windows, and a stone base",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Various/Modern-Chalet_Sunset.webp",
-        alt: "Sunset — golden hour",
+        alt: "Golden hour exterior rendering of a contemporary alpine chalet, featuring warm exterior lighting and glowing interior windows against a dusk sky",
         layoutHint: "full",
       },
       {
         type: "image",
         src: "/projects/Various/Modern-Chalet_Pool.webp",
-        alt: "Pool terrace — dusk render",
+        alt: "3D residential rendering of a modern chalet backyard featuring a private swimming pool, wooden deck with lounge chairs, and vertical timber louvers",
         layoutHint: "full",
       },
     ],
@@ -778,12 +753,12 @@ export const detailedProjects: ProjectDetail[] = [
     location: "Warsaw, Poland",
     year: "2023",
     description:
-      "A single exterior render of a private residence in Warsaw — a controlled study in how brick, glazing, and winter light combine on a tight urban plot.",
+      "3D residential rendering of a modern two-story house featuring steep metal roofing with snow guards, an attached garage with a grey sectional door, and a landscaped front yard with blooming dandelions, outdoor patio seating, and vibrant shrubbery",
     media: [
       {
         type: "image",
         src: "/projects/Various/warsaw-house.webp",
-        alt: "Exterior — primary view",
+        alt: "3D rendering of a modern two-story house with dark metal roof, grey brick, attached garage, and a garden with dandelions",
         layoutHint: "full",
       },
     ],
@@ -798,7 +773,7 @@ export const detailedProjects: ProjectDetail[] = [
     location: "Mexico",
     year: "2023",
     description:
-      "An exterior study of a Mexican residence exploring the interplay of rendered concrete, timber screens, and intense midday sunlight.",
+      "3D architectural rendering of a modern Mexican-style house featuring stark white stucco walls, a flat roof, and a minimalist front facade. The design highlights a large wooden garage door with warm, recessed under-lighting and an adjacent entryway with vertical timber slats. The front landscaping showcases native desert flora, including a prominent saguaro cactus and agave plants, illuminated by targeted landscape lighting against the white exterior, set above a dark paved driveway",
     media: [
       {
         type: "image",
@@ -817,12 +792,12 @@ export const detailedProjects: ProjectDetail[] = [
     location: "Mexico",
     year: "2024",
     description:
-      "A high-rise residential tower rendered from street level — studying how the podium, balcony rhythm, and rooftop garden read against the city skyline.",
+      "3D architectural rendering of a contemporary high-rise in Mexico, featuring a striking dark grey façade with continuous white LED contour lighting that traces the zigzag horizontal lines of each floor. The design includes large white-framed windows throughout and a distinctive base level adorned with a pixelated mosaic tile pattern. Set against a dramatic purple and pink sunset sky, the scene is grounded by tropical palm trees at street level and a motion-blurred car with red light trails in the foreground, emphasizing an urban atmosphere.",
     media: [
       {
         type: "image",
         src: "/projects/Various/Apartment-Tower_Mexico.webp",
-        alt: "Tower — street-level view",
+        alt: "3D rendering of a modern Mexican high-rise building with wavy dark façade, white contour lighting, mosaic base, and purple sunset sky",
         layoutHint: "full",
       },
     ],
@@ -837,18 +812,18 @@ export const detailedProjects: ProjectDetail[] = [
     location: "Private residence",
     year: "2024",
     description:
-      "Two key camera studies for a residential interior — living room and coffee-table detail — rendered in tall portrait format for print and social use.",
+      "Interior 3D rendering of a modern living space featuring a textured boucle sofa and armchair set, a round marble coffee table with wooden legs, and a black floor lamp. The background consists of a feature wall combining vertical natural wood paneling and cream fluted ribbed panels, accented by circular gold wire wall art and subtle cov lighting. The flooring is light marble tile.",
     media: [
       {
         type: "image",
         src: "/projects/Various/apt1_living-room.webp",
-        alt: "Living room — portrait format",
+        alt: "Close-up of a modern lounge area featuring a curved boucle armchair with a throw, a black arched floor lamp, and a wall with large natural wood panels and vertical cream ribbed slats.",
         layoutHint: "half",
       },
       {
         type: "image",
         src: "/projects/Various/apt1_coffee-table.webp",
-        alt: "Coffee table — detail study",
+        alt: "Modern living room with a textured boucle sofa, spherical pillows, an oval marble coffee table holding a book and cup, and a feature wall combining wood panels, cream fluted panels, and gold wire art",
         layoutHint: "half",
       },
     ],
