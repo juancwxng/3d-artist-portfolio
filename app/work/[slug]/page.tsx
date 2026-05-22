@@ -5,78 +5,9 @@ import { notFound, useParams } from "next/navigation";
 import Link from "next/link";
 import { getProject } from "@/data/portfolio";
 import type { MediaItem } from "@/data/portfolio";
+import Lightbox from "@/components/ui/Lightbox";
 
-/* ZOOM OVERLAY */
-function ZoomOverlay({
-  src,
-  alt,
-  onClose,
-}: {
-  src: string;
-  alt: string;
-  onClose: () => void;
-}) {
-  useEffect(() => {
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
-    };
-    document.addEventListener("keydown", onKey);
-    document.body.style.overflow = "hidden";
-    return () => {
-      document.removeEventListener("keydown", onKey);
-      document.body.style.overflow = "";
-    };
-  }, [onClose]);
-
-  return (
-    <div
-      role="dialog"
-      aria-modal="true"
-      aria-label={`Zoomed: ${alt}`}
-      className="fixed inset-0 z-[500] flex items-center justify-center cursor-zoom-out"
-      style={{
-        background: "rgba(247, 243, 238, 0.97)",
-        backdropFilter: "blur(2px)",
-      }}
-      onClick={onClose}
-    >
-      {/* Close hint */}
-      <span
-        className="absolute top-6 right-8 font-sans text-[10px] tracking-[0.3em] uppercase text-[#7a6e63]"
-        style={{ fontFamily: "var(--font-jost, sans-serif)" }}
-      >
-        Press Esc or click to close
-      </span>
-
-      {/* Image */}
-      <div
-        className="relative max-w-[90vw] max-h-[90vh] overflow-hidden rounded-[3px]"
-        style={{
-          boxShadow: "0 40px 120px rgba(43,42,39,0.18)",
-          animation: "zoomIn 0.38s cubic-bezier(0.16,1,0.3,1) forwards",
-        }}
-        onClick={(e) => e.stopPropagation()}
-      >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={src}
-          alt={alt}
-          className="block w-auto h-auto max-w-[90vw] max-h-[90vh] object-contain"
-          style={{ display: "block" }}
-        />
-      </div>
-
-      <style>{`
-        @keyframes zoomIn {
-          from { opacity: 0; transform: scale(0.94); }
-          to   { opacity: 1; transform: scale(1); }
-        }
-      `}</style>
-    </div>
-  );
-}
-
-/*  ZOOMABLE IMAGE  */
+/*  ZOOMABLE IMAGE — opens the shared Lightbox with a single image  */
 function ZoomableImage({
   src,
   alt = "",
@@ -86,7 +17,7 @@ function ZoomableImage({
   alt?: string;
   className?: string;
 }) {
-  const [zoomed, setZoomed] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
@@ -96,10 +27,13 @@ function ZoomableImage({
         alt={alt}
         className={`block w-full h-auto cursor-zoom-in transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] hover:scale-[1.012] ${className}`}
         style={{ display: "block" }}
-        onClick={() => setZoomed(true)}
+        onClick={() => setOpen(true)}
       />
-      {zoomed && (
-        <ZoomOverlay src={src} alt={alt} onClose={() => setZoomed(false)} />
+      {open && (
+        <Lightbox
+          images={[{ src, alt }]}
+          onClose={() => setOpen(false)}
+        />
       )}
     </>
   );
