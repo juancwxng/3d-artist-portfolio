@@ -94,17 +94,6 @@ export const projects: Project[] = [
       "linear-gradient(135deg, rgba(43,42,39,0.35) 0%, rgba(43,42,39,0.05) 100%), repeating-linear-gradient(0deg, rgba(255,255,255,0.03) 0px, rgba(255,255,255,0.03) 1px, transparent 1px, transparent 28px), #c2b2a5",
   },
   {
-    id: "garden-spa",
-    name: "Garden Spa",
-    sub: "Landscape · Private residence",
-    year: "2023",
-    featured: false,
-    tags: [{ label: "Exterior", variant: "exterior" }],
-    imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "linear-gradient(135deg, rgba(106,124,94,0.25) 0%, rgba(43,42,39,0.05) 100%), #b2c4a8",
-  },
-  {
     id: "luxury-flat",
     name: "Luxury Flat, Tverskaya",
     sub: "Residential · Central Moscow",
@@ -114,6 +103,116 @@ export const projects: Project[] = [
     imgLabel: "Interior · 3D render",
     imgStyle:
       "linear-gradient(155deg, rgba(232,197,192,0.25) 0%, rgba(43,42,39,0.1) 100%), #c4b0ae",
+  },
+  {
+    id: "slavic-sauna",
+    name: "Slavic Sauna",
+    sub: "Residential · Private wellness",
+    year: "2023",
+    featured: false,
+    tags: [{ label: "Interior", variant: "interior" }],
+    imgLabel: "Interior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(160,100,70,0.3) 0%, rgba(43,42,39,0.08) 100%), #c4a882",
+  },
+  {
+    id: "lake-house",
+    name: "Lake House",
+    sub: "Residential · Exterior",
+    year: "2024",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(80,110,140,0.3) 0%, rgba(43,42,39,0.05) 100%), #a0b8c8",
+  },
+  {
+    id: "linear-park",
+    name: "Linear Park",
+    sub: "Landscape · Public space",
+    year: "2023",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(100,130,80,0.3) 0%, rgba(43,42,39,0.05) 100%), #a8c090",
+  },
+  {
+    id: "city-park-chekhov",
+    name: "City Park\nChekhov",
+    sub: "Landscape · Public space",
+    year: "2024",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(120,150,90,0.25) 0%, rgba(43,42,39,0.05) 100%), #b0c4a0",
+  },
+  {
+    id: "modern-chalet",
+    name: "Modern Chalet",
+    sub: "Residential · Exterior",
+    year: "2024",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(180,150,110,0.3) 0%, rgba(43,42,39,0.08) 100%), #c8b090",
+  },
+  {
+    id: "warsaw-house",
+    name: "Warsaw House",
+    sub: "Residential · Exterior",
+    year: "2023",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(100,95,85,0.25) 0%, rgba(43,42,39,0.05) 100%), #b8b4ac",
+  },
+  {
+    id: "mexican-house",
+    name: "Mexican House",
+    sub: "Residential · Exterior",
+    year: "2023",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(180,130,80,0.3) 0%, rgba(43,42,39,0.08) 100%), #c8a888",
+  },
+  {
+    id: "apartment-tower-mexico",
+    name: "Apartment Tower\nMexico",
+    sub: "Commercial · Exterior",
+    year: "2024",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(80,100,130,0.3) 0%, rgba(43,42,39,0.05) 100%), #a8b0c0",
+  },
+  {
+    id: "apt1",
+    name: "Apartment Interior\nStudy",
+    sub: "Residential · Interior",
+    year: "2024",
+    featured: false,
+    tags: [{ label: "Interior", variant: "interior" }],
+    imgLabel: "Interior · 3D render",
+    imgStyle:
+      "linear-gradient(155deg, rgba(160,130,110,0.25) 0%, rgba(43,42,39,0.08) 100%), #c0b0a8",
+  },
+  {
+    id: "garden-spa",
+    name: "Garden Spa",
+    sub: "Landscape · Private residence",
+    year: "2023",
+    featured: false,
+    tags: [{ label: "Exterior", variant: "exterior" }],
+    imgLabel: "Exterior · 3D render",
+    imgStyle:
+      "linear-gradient(135deg, rgba(106,124,94,0.25) 0%, rgba(43,42,39,0.05) 100%), #b2c4a8",
   },
   {
     id: "law-firm-buffet",
@@ -133,6 +232,7 @@ export const projects: Project[] = [
 
 // ─── DYNAMIC PROJECTS (CASE STUDIES) ──────────────────────
 export const detailedProjects: ProjectDetail[] = [
+  // ── Office Complex Moscow ─────────────────────────────
   {
     slug: "office-moscow",
     title: "Office Complex Moscow",
@@ -234,18 +334,8 @@ export const detailedProjects: ProjectDetail[] = [
       },
     ],
   },
-  {
-    slug: "garden-spa",
-    title: "Garden Spa",
-    category: "Landscape & Exterior",
-    location: "Private residence",
-    year: "2023",
-    description:
-      "A private spa garden conceived as a series of outdoor rooms: the pool terrace, the shade pavilion, and the kitchen garden. Every planting scheme, stone selection, and water feature was resolved in 3D before a single plant was ordered.",
-    media: [
-      // Add media here when images are available
-    ],
-  },
+
+  // ── Luxury Flat, Tverskaya ────────────────────────────
   {
     slug: "luxury-flat",
     title: "Luxury Flat, Tverskaya",
@@ -365,6 +455,418 @@ export const detailedProjects: ProjectDetail[] = [
       },
     ],
   },
+
+  // ── Slavic Sauna ──────────────────────────────────────
+  // Portrait pairs: _1+_2, _3+_4, _5+_6, _7+_8, _9+_10, _12+_13
+  // Landscape fulls: _11, _14
+  // _10_2 is an alternate take of _10 — rendered full-width as the odd one out
+  {
+    slug: "slavic-sauna",
+    title: "Slavic Sauna",
+    category: "Residential Interior",
+    location: "Private residence",
+    year: "2023",
+    description:
+      "A private wellness retreat designed around the ritual of the banya — raw timber, steam, and stone resolved across fourteen camera studies before construction began.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_1.webp",
+        alt: "Main hall — wide establishing shot",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_2.webp",
+        alt: "Main hall — frontal view",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_3.webp",
+        alt: "Steam room — primary angle",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_4.webp",
+        alt: "Steam room — narrow format",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_5.webp",
+        alt: "Changing room",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_6.webp",
+        alt: "Lounge area",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_7.webp",
+        alt: "Rest area",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_8.webp",
+        alt: "Hot room — timber detail",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_9.webp",
+        alt: "Hot room — bench level",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_10.webp",
+        alt: "Hot room — elevated angle",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_10_2.webp",
+        alt: "Hot room — alternate take",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_11.webp",
+        alt: "Exterior terrace — overview",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_12.webp",
+        alt: "Corridor — detail",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_13.webp",
+        alt: "Corridor — ambient light",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Slavic-Sauna/Slavic-Sauna_14.webp",
+        alt: "Exterior — full view",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── Lake House Exterior ───────────────────────────────
+  // All images are 3840x2040 landscape — all full-width
+  // Note: Cyrillic filenames (видовая точка = viewpoint); _3 is missing from the export
+  {
+    slug: "lake-house",
+    title: "Lake House",
+    category: "Residential Exterior",
+    location: "Private residence",
+    year: "2024",
+    description:
+      "A lakeside residence captured across eight viewpoints — dawn to dusk — to demonstrate how the building settles into its waterfront site at every hour of the day.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_1.webp",
+        alt: "Viewpoint 1 — primary approach",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_2.webp",
+        alt: "Viewpoint 2 — lakeside elevation",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_4.webp",
+        alt: "Viewpoint 4 — garden terrace",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_5.webp",
+        alt: "Viewpoint 5 — water's edge",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_6.webp",
+        alt: "Viewpoint 6 — entry sequence",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_7.webp",
+        alt: "Viewpoint 7 — dusk render",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_8.webp",
+        alt: "Viewpoint 8 — evening render",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Lake-House_Exterior/Lake-House_Exterior_видовая точка_9.webp",
+        alt: "Viewpoint 9 — night render",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── Linear Park ──────────────────────────────────────
+  // _1 and _4 are portrait (1915x2500) — pair them
+  // All others are wide landscape — full-width
+  {
+    slug: "linear-park",
+    title: "Linear Park",
+    category: "Landscape & Exterior",
+    location: "Public space",
+    year: "2023",
+    description:
+      "A linear public park resolved across eight viewpoints — from the entry pavilion to the far promenade — testing material palettes, planting density, and seasonal light before groundwork began.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_1.webp",
+        alt: "Entry pavilion — portrait view",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_4.webp",
+        alt: "Pavilion — alternate angle",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_2.webp",
+        alt: "Promenade — wide establishing shot",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_3.webp",
+        alt: "Central zone — planting study",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_5.webp",
+        alt: "Seating area — afternoon light",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_6.webp",
+        alt: "Promenade — dusk render",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_7.webp",
+        alt: "Far end — panoramic view",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Linear-Park/Linear-Park_8.webp",
+        alt: "Boundary — panoramic view",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── City Park Chekhov ─────────────────────────────────
+  // All wide landscape except _5 which is portrait (2404x2984) — rendered full since no pair
+  {
+    slug: "city-park-chekhov",
+    title: "City Park Chekhov",
+    category: "Landscape & Exterior",
+    location: "Chekhov, Russia",
+    year: "2024",
+    description:
+      "A municipal park in Chekhov rendered across six camera angles to demonstrate the spatial progression from the main entrance to the central amphitheatre.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_1.webp",
+        alt: "Main entrance — panoramic",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_2.webp",
+        alt: "Central promenade",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_3.webp",
+        alt: "Path network — wide view",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_4.webp",
+        alt: "Path network — alternate angle",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_5.webp",
+        alt: "Amphitheatre — portrait view",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/City-Park_Chekhov/City-Park_Chekhov_6.webp",
+        alt: "Far boundary — panoramic",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── Modern Chalet ─────────────────────────────────────
+  // All 3733×2100 landscape — full-width
+  {
+    slug: "modern-chalet",
+    title: "Modern Chalet",
+    category: "Residential Exterior",
+    location: "Private residence",
+    year: "2024",
+    description:
+      "A contemporary alpine chalet rendered at three times of day — daytime overcast, golden-hour sunset, and poolside dusk — to demonstrate how the facade and landscape read across the full arc of natural light.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Various/Modern-Chalet_Daytime.webp",
+        alt: "Daytime — overcast light",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Various/Modern-Chalet_Sunset.webp",
+        alt: "Sunset — golden hour",
+        layoutHint: "full",
+      },
+      {
+        type: "image",
+        src: "/projects/Various/Modern-Chalet_Pool.webp",
+        alt: "Pool terrace — dusk render",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── Warsaw House ──────────────────────────────────────
+  {
+    slug: "warsaw-house",
+    title: "Warsaw House",
+    category: "Residential Exterior",
+    location: "Warsaw, Poland",
+    year: "2023",
+    description:
+      "A single exterior render of a private residence in Warsaw — a controlled study in how brick, glazing, and winter light combine on a tight urban plot.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Various/warsaw-house.webp",
+        alt: "Exterior — primary view",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── Mexican House ─────────────────────────────────────
+  // Note: exported at 72 dpi — may appear softer than other renders
+  {
+    slug: "mexican-house",
+    title: "Mexican House",
+    category: "Residential Exterior",
+    location: "Mexico",
+    year: "2023",
+    description:
+      "An exterior study of a Mexican residence exploring the interplay of rendered concrete, timber screens, and intense midday sunlight.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Various/Mexican-House.webp",
+        alt: "Exterior — primary view",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── Apartment Tower Mexico ────────────────────────────
+  {
+    slug: "apartment-tower-mexico",
+    title: "Apartment Tower Mexico",
+    category: "Commercial Exterior",
+    location: "Mexico",
+    year: "2024",
+    description:
+      "A high-rise residential tower rendered from street level — studying how the podium, balcony rhythm, and rooftop garden read against the city skyline.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Various/Apartment-Tower_Mexico.webp",
+        alt: "Tower — street-level view",
+        layoutHint: "full",
+      },
+    ],
+  },
+
+  // ── Apartment Study (apt1) ────────────────────────────
+  // Two very tall portrait images (2419x4300) — paired as half
+  {
+    slug: "apt1",
+    title: "Apartment Interior Study",
+    category: "Residential Interior",
+    location: "Private residence",
+    year: "2024",
+    description:
+      "Two key camera studies for a residential interior — living room and coffee-table detail — rendered in tall portrait format for print and social use.",
+    media: [
+      {
+        type: "image",
+        src: "/projects/Various/apt1_living-room.webp",
+        alt: "Living room — portrait format",
+        layoutHint: "half",
+      },
+      {
+        type: "image",
+        src: "/projects/Various/apt1_coffee-table.webp",
+        alt: "Coffee table — detail study",
+        layoutHint: "half",
+      },
+    ],
+  },
+
+  // ── Garden Spa ───────────────────────────────────────
+  {
+    slug: "garden-spa",
+    title: "Garden Spa",
+    category: "Landscape & Exterior",
+    location: "Private residence",
+    year: "2023",
+    description:
+      "A private spa garden conceived as a series of outdoor rooms: the pool terrace, the shade pavilion, and the kitchen garden. Every planting scheme, stone selection, and water feature was resolved in 3D before a single plant was ordered.",
+    media: [],
+  },
+
+  // ── Law Firm Buffet ───────────────────────────────────
   {
     slug: "law-firm-buffet",
     title: "Law Firm Buffet",
@@ -373,9 +875,7 @@ export const detailedProjects: ProjectDetail[] = [
     year: "2025",
     description:
       "An in-house dining and hospitality suite for a prominent law firm, currently in production. Material directions under review — two tile options and three lighting scenarios are being evaluated ahead of the final client presentation.",
-    media: [
-      // Add media here when images are available
-    ],
+    media: [],
   },
 ];
 
