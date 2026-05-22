@@ -1,5 +1,5 @@
-'use client';
-import { useEffect, useRef } from 'react';
+"use client";
+import { useEffect, useRef } from "react";
 import {
   heroEyebrow,
   heroName,
@@ -7,7 +7,7 @@ import {
   heroPrimaryBtn,
   heroSecondaryBtn,
   heroQuote,
-} from '@/data/portfolio';
+} from "@/data/portfolio";
 
 export default function HeroSection() {
   const sectionRef = useRef<HTMLElement>(null);
@@ -16,7 +16,7 @@ export default function HeroSection() {
   useEffect(() => {
     const el = sectionRef.current;
     if (el) {
-      setTimeout(() => el.classList.add('is-visible'), 100);
+      setTimeout(() => el.classList.add("is-visible"), 100);
     }
   }, []);
 
@@ -26,13 +26,13 @@ export default function HeroSection() {
       ref={sectionRef}
       aria-label="Introduction"
       className="reveal relative min-h-svh flex flex-col items-center justify-center text-center overflow-hidden bg-[#f7f3ee]"
-      style={{ paddingTop: 'var(--header-h, 58px)' }}
+      style={{ paddingTop: "var(--header-h, 58px)" }}
     >
       {/* ── Background image with gradient overlay ── */}
       <div className="absolute inset-0 z-0">
         <img
-          src="/render-placeholder.jpg"
-          alt="Hero 3D Render"
+          src="/Hero.webp"
+          alt=""
           className="object-cover w-full h-full opacity-40"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#f7f3ee]/70 to-[#f7f3ee]" />
@@ -40,7 +40,6 @@ export default function HeroSection() {
 
       {/* ── Centered content ── */}
       <div className="relative z-[1] flex flex-col items-center px-6 py-16 sm:px-10 md:px-16 max-w-4xl mx-auto w-full">
-
         {/* Eyebrow */}
         <p
           className="text-[0.5rem] tracking-[0.32em] uppercase text-[#7a6e63] font-normal mb-7 flex items-center gap-3"
@@ -52,9 +51,7 @@ export default function HeroSection() {
         </p>
 
         {/* Name */}
-        <h1
-          className="font-serif font-light italic text-[#2b2a27] leading-[0.9] tracking-[-0.01em] mb-7 text-5xl md:text-7xl"
-        >
+        <h1 className="font-serif font-light italic text-[#2b2a27] leading-[0.9] tracking-[-0.01em] mb-7 text-5xl md:text-7xl">
           {firstName}
           <br />
           {lastName}
@@ -66,7 +63,7 @@ export default function HeroSection() {
         {/* Tagline */}
         <p
           className="font-serif italic font-light text-[#3d3830] leading-[1.6] max-w-sm mb-10"
-          style={{ fontSize: 'clamp(0.9375rem, 2.2vw, 1.1875rem)' }}
+          style={{ fontSize: "clamp(0.9375rem, 2.2vw, 1.1875rem)" }}
         >
           {heroTagline}
         </p>
