@@ -1,7 +1,6 @@
 import type {
   Project,
   ProcessStep,
-  AboutStat,
   HeroStat,
   HeroDiscipline,
   ContactMetaItem,
@@ -864,30 +863,28 @@ export const processSteps: ProcessStep[] = [
 ];
 
 // ─── ABOUT SECTION ────────────────────────────────────────
-export const aboutEyebrow = "Background";
+
+export const aboutEyebrow = "About";
 export const aboutHeadline =
   "Trained in landscape architecture.\nFluent in light and space.";
-export const aboutBody1 =
-  "I'm Anastasiia — a 3D visualisation artist with a Bachelor's degree in Landscape Architecture. My academic background means I understand how spaces relate to their environment: how light behaves at different hours, how materials age, how a garden and a building can speak the same visual language.";
-export const aboutBody2 =
-  "Based in Mexico, I work remotely with clients across the United States, Canada, Australia, New Zealand, and beyond. My recent projects include an office complex and luxury residential flat in central Moscow, and an ongoing law firm interior currently in production.";
-export const aboutBadgeNum = "6+";
-export const aboutBadgeLabel = "Years of practice";
+
+export const aboutOpener =
+  "I'm Anastasiia — a 3D visualisation artist with a background in Landscape Architecture. My academic training means I understand how spaces relate to their environment: how light moves through a room at different hours, how materials age, how a garden and a building can share the same visual language.";
+
+export const aboutBody =
+  "Based in Mexico, I work remotely with architects, developers, and interior designers across the United States, Canada, Australia, and beyond. Every project begins with careful listening — the render is the last step, not the first.";
+
+export const aboutQuote =
+  "I don't illustrate spaces. I find the hour of day, the quality of light, the mood of the material — and render that.";
+
+export const aboutDisciplines: string[] = [
+  "Interior visualisation",
+  "Exterior & architecture",
+  "Landscape design",
+];
+
 export const aboutPortraitLabel = "Portrait of Anastasiia Monzón";
-export const aboutPortraitPlaceholder = "portrait photo";
-
-export const aboutCredentials: string[] = [
-  "B.A. Landscape Architecture",
-  "Remote-first · English & Spanish",
-  "Based in Mexico · UTC−7",
-  "Replies within 24 hours",
-];
-
-export const aboutStats: AboutStat[] = [
-  { num: "40+", label: "Projects delivered" },
-  { num: "12+", label: "Countries served" },
-  { num: "3", label: "Disciplines" },
-];
+export const aboutPortraitSrc = ""; //
 
 // ─── SOCIAL SECTION ───────────────────────────────────────
 export const socialEyebrow = "Find me online";

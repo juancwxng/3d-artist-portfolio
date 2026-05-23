@@ -1,6 +1,7 @@
 "use client";
-
+import Image from "next/image";
 import { useEffect, useRef } from "react";
+
 import {
   aboutEyebrow,
   aboutHeadline,
@@ -45,14 +46,15 @@ export default function AboutSection() {
         <div className="relative">
           {/* Portrait */}
           <div
-            className="w-full rounded-[3px] overflow-hidden aspect-[3/4]"
+            className="relative w-full rounded-[3px] overflow-hidden aspect-[3/4]"
             aria-label={aboutPortraitLabel}
           >
             {aboutPortraitSrc ? (
-              <img
+              <Image
                 src={aboutPortraitSrc}
                 alt={aboutPortraitLabel}
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             ) : (
               <div
