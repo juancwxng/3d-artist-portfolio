@@ -3,23 +3,34 @@
   "main": ".open-next/worker.js",
   "name": "3d-artist-portfolio",
   "compatibility_date": "2026-05-22",
-  "compatibility_flags": [
-    "nodejs_compat"
-  ],
+  "compatibility_flags": ["nodejs_compat"],
   "assets": {
     "directory": ".open-next/assets",
-    "binding": "ASSETS"
+    "binding": "ASSETS",
   },
   "services": [
     {
       "binding": "WORKER_SELF_REFERENCE",
-      "service": "3d-artist-portfolio"
-    }
+      "service": "3d-artist-portfolio",
+    },
   ],
   "images": {
-    "binding": "IMAGES"
+    "binding": "IMAGES",
   },
   "observability": {
-    "enabled": true
-  }
+    "enabled": true,
+  },
+
+  // ── KV namespace for rate limiting ────────────────────────
+  "kv_namespaces": [
+    {
+      "binding": "CONTACT_RL_KV",
+      "id": "94228f51becf419a8427a26ceb682a6d",
+    },
+  ],
+
+  // ── Plain environment variables ───────────────────────────
+  "vars": {
+    "CONTACT_EMAIL": "hello@anastasiamonzon.com",
+  },
 }
