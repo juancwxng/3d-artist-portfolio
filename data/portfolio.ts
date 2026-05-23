@@ -30,12 +30,12 @@ export interface ProjectDetail {
 
 // ─── SITE META ────────────────────────────────────────────
 export const siteTitle =
-  "Anastasiia Monzon — Architectural Visualisation Studio";
+  "Anastasia Monzon — 3D Architectural Visualisation & Rendering Artist";
 export const siteDescription =
-  "Architectural visualisation studio specialising in interiors, exteriors, and landscape design. Available for projects worldwide.";
+  "Freelance 3D architectural visualisation artist based in Mexico. Partnering with architects, interior designers, and developers worldwide to translate CAD files, master plans, and material boards into photorealistic 3D renders.";
 
 // ─── HEADER ───────────────────────────────────────────────
-export const logoText = "A. Monzon";
+export const logoText = "Anastasia. Monzon";
 
 export const navLinks: NavLink[] = [
   { label: "Work", href: "#work" },
@@ -44,18 +44,17 @@ export const navLinks: NavLink[] = [
 ];
 
 // ─── HERO ─────────────────────────────────────────────────
-export const heroEyebrow = "Architectural Visualisation Studio";
-export const heroName = ["Anastasiia", "Monzon"] as const;
+export const heroEyebrow = "3D Architectural Visualisation Studio";
+export const heroName = ["Anastasia", "Monzon"] as const;
 export const heroTagline =
-  "Turning empty rooms into finished stories — before a single brick is laid.";
+  "You design the space. I bring it to life. Transforming architectural plans and CAD files into photorealistic 3D renders.";
 export const heroPrimaryBtn = "View work \u00a0→";
 export const heroSecondaryBtn = "Start a project";
 
 export const heroQuote =
-  '"Architecture is the art of how to waste space thoughtfully — I make sure it photographs beautifully."';
+  '"I partner with visionary architects and interior designers to turn blueprints and material lists into high-end visual stories."';
 export const heroAvailDot = "Currently accepting Q3 2026 projects";
 export const heroAvailLabel = "Worldwide · Remote";
-export const heroScrollLabel = "Scroll";
 
 export const heroDisciplines: HeroDiscipline[] = [
   { label: "Interior visualisation", active: true },
@@ -68,12 +67,6 @@ export const heroStats: HeroStat[] = [
   { num: "12+", label: "Countries" },
   { num: "6", label: "Years" },
 ];
-
-// ─── SCROLL ANIMATION ─────────────────────────────────────
-export const animGhostTitle = "An empty room fills with life";
-export const animGhostSub = "Scroll to reveal";
-export const animCaptionText = "Interior visualisation";
-export const animCounter = "001 / 120";
 
 // ─── WORK SECTION (HOME) ──────────────────────────────────
 export const workEyebrow = "Portfolio";
@@ -833,26 +826,26 @@ export function getProject(slug: string): ProjectDetail | null {
 
 // ─── PROCESS SECTION ──────────────────────────────────────
 export const processEyebrow = "How it works";
-export const processTitle = "From brief to delivery";
+export const processTitle = "From blueprint to final render";
 
 export const processSteps: ProcessStep[] = [
   {
-    num: "01 — Brief",
+    num: "01 — Handover",
     phase: "Brief",
-    name: "Discovery & scope",
-    desc: "We discuss your project, references, materials, and timeline. I'll ask about mood, function, and who the space is for.",
+    name: "Files & scope",
+    desc: "You send over your master plans, CAD files, material boards, and measurements. We discuss your vision, the intended mood, and the target audience for the space.",
   },
   {
     num: "02 — Concept",
     phase: "Concept",
-    name: "Draft renders",
-    desc: "Low-resolution drafts to validate camera angles, proportions, and lighting direction before committing to full quality.",
+    name: "Clay models & lighting",
+    desc: "I build the 3D geometry from your plans and provide low-resolution drafts to validate camera angles, architectural proportions, and lighting direction.",
   },
   {
     num: "03 — Refinement",
     phase: "Refinement",
-    name: "Full renders",
-    desc: "High-resolution production renders with two rounds of revision included. Additional rounds available on request.",
+    name: "Materials & texturing",
+    desc: "Once the geometry is approved, I apply your specific material list and generate high-resolution production renders. Two rounds of revision are included.",
   },
   {
     num: "04 — Delivery",
@@ -866,16 +859,16 @@ export const processSteps: ProcessStep[] = [
 
 export const aboutEyebrow = "About";
 export const aboutHeadline =
-  "Trained in landscape architecture.\nFluent in light and space.";
+  "A dedicated rendering partner for architects and designers.";
 
 export const aboutOpener =
-  "I'm Anastasiia — a 3D visualisation artist with a background in Landscape Architecture. My academic training means I understand how spaces relate to their environment: how light moves through a room at different hours, how materials age, how a garden and a building can share the same visual language.";
+  "I'm Anastasiia — a freelance 3D visualisation artist with a background in Landscape Architecture. I specialise in collaborating directly with architects, interior designers, and real estate developers to translate their technical drawings into photorealistic imagery.";
 
 export const aboutBody =
-  "Based in Mexico, I work remotely with architects, developers, and interior designers across the United States, Canada, Australia, and beyond. Every project begins with careful listening — the render is the last step, not the first.";
+  "Operating through anastasiamonzon.com from Mexico, I work remotely with design teams across the United States, Canada, Australia, and worldwide. My role isn't to design the space, but to deeply understand your blueprints and material schedules, applying precise lighting and texturing to showcase your architectural vision exactly as you intended.";
 
 export const aboutQuote =
-  "I don't illustrate spaces. I find the hour of day, the quality of light, the mood of the material — and render that.";
+  "I don't just illustrate spaces. I take your hard work and find the perfect hour of day, quality of light, and mood of the material to ensure it photographs beautifully.";
 
 export const aboutDisciplines: string[] = [
   "Interior visualisation",
