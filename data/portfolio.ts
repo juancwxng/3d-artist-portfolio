@@ -140,7 +140,7 @@ export const projects: Project[] = [
     featured: false,
     tags: [{ label: "Exterior", variant: "exterior" }],
     imgLabel: "Exterior · 3D render",
-    imgStyle: "/projects/City-Park_Chekhov/City-Park_Chekhov_1.webp",
+    imgStyle: "/projects/Civic-Heritage-Park/Civic-Heritage-Park_1.webp",
   },
   {
     id: "modern-chalet",
