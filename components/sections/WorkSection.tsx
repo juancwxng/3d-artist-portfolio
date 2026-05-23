@@ -24,7 +24,7 @@ export default function WorkSection() {
     return () => obs.disconnect();
   }, []);
 
-  const visible = showAll ? projects : projects.slice(0, 4);
+  const visible = showAll ? projects : projects.slice(0, 5);
 
   return (
     <section
@@ -57,7 +57,7 @@ export default function WorkSection() {
       </div>
 
       {/* "All projects →" — only shown when collapsed */}
-      {!showAll && projects.length > 4 && (
+      {!showAll && projects.length > 5 && (
         <div className="mt-10 flex justify-center">
           <button
             onClick={() => setShowAll(true)}
