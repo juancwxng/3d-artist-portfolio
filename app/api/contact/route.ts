@@ -237,14 +237,16 @@ export async function POST(req: NextRequest) {
   }
 
   // ── 8. Cloudflare context (env + IP) ────────────────────
-  const cf = await getCloudflareContext<CloudflareEnv>();
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const cf = await getCloudflareContext<any>();
+  const env = cf.env as CloudflareEnv;
   const ip =
     req.headers.get('cf-connecting-ip') ??
     req.headers.get('x-forwarded-for')?.split(',')[0].trim() ??
     'unknown';
 
   // ── 9. Turnstile verification ───────────────────────────
-  const turnstileSecret = cf.env.TURNSTILE_SECRET_KEY;
+  const turnstileSecret = env.TURNSTILE_SECRET_KEY;
   if (turnstileSecret) {
     const tokenOk = await verifyTurnstile(payload._token ?? '', ip, turnstileSecret);
     if (!tokenOk) {
@@ -256,7 +258,7 @@ export async function POST(req: NextRequest) {
   }
 
   // ── 10. Rate limiting ────────────────────────────────────
-  const kv = cf.env.CONTACT_RL_KV;
+  const kv = env.CONTACT_RL_KV;
   if (kv) {
     const { allowed } = await checkRateLimit(kv, ip);
     if (!allowed) {
@@ -268,7 +270,7 @@ export async function POST(req: NextRequest) {
   }
 
   // ── 11. Send email ───────────────────────────────────────
-  const resendKey = cf.env.RESEND_API_KEY;
+  const resendKey = env.RESEND_API_KEY;
   if (!resendKey) {
     console.error('[contact] RESEND_API_KEY is not set');
     return NextResponse.json(
@@ -277,7 +279,7 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const toEmail = cf.env.CONTACT_EMAIL ?? 'hello@anastasiamonzon.com';
+  const toEmail = env.CONTACT_EMAIL ?? 'hello@anastasiamonzon.com';
   const sanitizedPayload: FormPayload = {
     name, email, project_type, budget, message,
     _hp: '', _ts: 0, _token: '',
