@@ -31,12 +31,12 @@ export interface ProjectDetail {
 
 // ─── SITE META ────────────────────────────────────────────
 export const siteTitle =
-  "Anastasiia Monzón — Architectural Visualisation Studio";
+  "Anastasiia Monzon — Architectural Visualisation Studio";
 export const siteDescription =
   "Architectural visualisation studio specialising in interiors, exteriors, and landscape design. Available for projects worldwide.";
 
 // ─── HEADER ───────────────────────────────────────────────
-export const logoText = "A. Monzón";
+export const logoText = "A. Monzon";
 
 export const navLinks: NavLink[] = [
   { label: "Work", href: "#work" },
@@ -46,7 +46,7 @@ export const navLinks: NavLink[] = [
 
 // ─── HERO ─────────────────────────────────────────────────
 export const heroEyebrow = "Architectural Visualisation Studio";
-export const heroName = ["Anastasiia", "Monzón"] as const;
+export const heroName = ["Anastasiia", "Monzon"] as const;
 export const heroTagline =
   "Turning empty rooms into finished stories — before a single brick is laid.";
 export const heroPrimaryBtn = "View work \u00a0→";
@@ -79,7 +79,6 @@ export const animCounter = "001 / 120";
 // ─── WORK SECTION (HOME) ──────────────────────────────────
 export const workEyebrow = "Portfolio";
 export const workTitle = "Selected work";
-export const workAllLink = "All projects →";
 
 export const projects: Project[] = [
   {
