@@ -14,7 +14,10 @@ interface CloudflareEnv {
 
   // KV namespace for contact form rate limiting
   // Create with: npx wrangler kv namespace create CONTACT_RL_KV
-  CONTACT_RL_KV: KVNamespace;
+  CONTACT_RL_KV: {
+    get(key: string): Promise<string | null>;
+    put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
+  };
 
   // ── Secrets (set via `npx wrangler secret put <NAME>`) ──
   // Your Resend API key — https://resend.com

@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getCloudflareContext } from '@opennextjs/cloudflare';
 
+// Minimal KVNamespace type — avoids requiring @cloudflare/workers-types in tsconfig
+interface KVNamespace {
+  get(key: string): Promise<string | null>;
+  put(key: string, value: string, options?: { expirationTtl?: number }): Promise<void>;
+}
+
 // ─── Config ───────────────────────────────────────────────
 const RATE_LIMIT = 5;           // max submissions per window
 const RATE_WINDOW_SEC = 3600;   // 1-hour rolling window
