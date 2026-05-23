@@ -192,31 +192,6 @@ export const projects: Project[] = [
     imgLabel: "Interior · 3D render",
     imgStyle: "/projects/Various/apt1_living-room.webp",
   },
-  {
-    id: "garden-spa",
-    name: "Garden Spa",
-    sub: "Landscape · Private residence",
-    year: "2023",
-    featured: false,
-    tags: [{ label: "Exterior", variant: "exterior" }],
-    imgLabel: "Exterior · 3D render",
-    imgStyle:
-      "linear-gradient(135deg, rgba(106,124,94,0.25) 0%, rgba(43,42,39,0.05) 100%), #b2c4a8",
-  },
-  {
-    id: "law-firm-buffet",
-    name: "Law Firm Buffet",
-    sub: "Commercial · Premium F&B interior",
-    year: "2025",
-    featured: false,
-    tags: [
-      { label: "Interior", variant: "interior" },
-      { label: "In production", variant: "neutral" },
-    ],
-    imgLabel: "In production",
-    imgStyle:
-      "linear-gradient(135deg, rgba(168,184,154,0.25) 0%, rgba(43,42,39,0.08) 100%), #b8c8b0",
-  },
 ];
 
 // ─── DYNAMIC PROJECTS (CASE STUDIES) ──────────────────────
