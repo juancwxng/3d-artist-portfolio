@@ -166,6 +166,34 @@ npm run deploy
 
 ---
 
+## SEO & GEO
+
+The following files were added or updated to maximise visibility on search engines and AI assistants (ChatGPT, Gemini, Perplexity, Claude).
+
+### Files changed
+
+| File | Change |
+|---|---|
+| `app/layout.tsx` | Full `Metadata` object with `metadataBase`, `keywords`, Open Graph, Twitter Card, and canonical URL. Three JSON-LD `<script>` tags injected into `<head>`: **Person**, **ProfessionalService**, and **FAQPage** schema. |
+| `app/sitemap.ts` | Auto-generated `/sitemap.xml` covering the home page and every `/work/[slug]` URL derived from `detailedProjects`. Adding a project to `data/portfolio.ts` includes it automatically. |
+| `app/robots.ts` | Explicit allow rules for all major AI crawlers (`GPTBot`, `ClaudeBot`, `anthropic-ai`, `PerplexityBot`, `Google-Extended`, `Bingbot`, `meta-externalagent`, `Applebot-Extended`, `cohere-ai`) plus all standard search bots. Only `/api/` is disallowed. |
+| `app/work/[slug]/page.tsx` | Converted from `"use client"` to a **server component** with `generateStaticParams` (pre-renders all project pages at build time) and `generateMetadata` (per-project `<title>`, `<description>`, Open Graph image from the project's first media item, and a `CreativeWork` JSON-LD with an `ImageObject` array for every render). |
+| `app/work/[slug]/ProjectPageClient.tsx` | New file — the original interactive logic (lightbox, video, reveal animations) extracted here so the server shell above can export metadata. |
+| `data/portfolio.ts` | `siteTitle` and `siteDescription` rewritten to be keyword-rich for target buyers (architects, interior designers, real estate developers). No other data changed. |
+
+### Structured data overview
+
+- **Person** — identifies Anastasia Monzon with `jobTitle`, `knowsLanguage`, `workLocation`, and `sameAs` links to Behance and LinkedIn.
+- **ProfessionalService** — describes the business, service types, price range, and `areaServed: Worldwide`.
+- **FAQPage** — five questions covering pricing ($800/render), required files, turnaround (5–10 days), remote availability, and specialities. Targets the exact queries clients ask AI assistants before reaching out.
+- **CreativeWork** (per project) — title, description, year, location, and an `ImageObject` for every render, making individual projects indexable by visual search and AI knowledge graphs.
+
+### OG image
+
+Place a 1200×630 JPEG at `public/og-image.jpg`. Recommended content: the Biophilic Office Campus atrium render cropped to ratio, with a semi-transparent warm-white strip at the bottom carrying the artist name (Playfair Display Italic) and service line (Jost 300, uppercase, tracked). This image is the fallback for all project pages that don't override it.
+
+---
+
 ## Developer
 
 **Juan Wong**  
