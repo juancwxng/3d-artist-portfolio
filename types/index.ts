@@ -1,4 +1,6 @@
-export type TagVariant = "interior" | "exterior" | "neutral";
+/* src/types/index.ts */
+
+export type TagVariant = 'interior' | 'exterior' | 'neutral';
 
 export interface ProjectTag {
   label: string;
