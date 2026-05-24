@@ -37,9 +37,9 @@ export const siteDescription =
 export const logoText = "Anastasia Monzon";
 
 export const navLinks: NavLink[] = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
-  { label: "Contact", href: "#contact", cta: true },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
+  { label: "Contact", href: "/#contact", cta: true },
 ];
 
 // ─── HERO ─────────────────────────────────────────────────
@@ -916,8 +916,8 @@ export const formBudgets = [
 export const footerCopy = "© 2026 Anastasia Monzon · All rights reserved";
 
 export const footerLinks: FooterLink[] = [
-  { label: "Work", href: "#work" },
-  { label: "About", href: "#about" },
+  { label: "Work", href: "/#work" },
+  { label: "About", href: "/#about" },
   { label: "Contact", href: "#contact" },
   { label: "Privacy", href: "/privacy" },
 ];
