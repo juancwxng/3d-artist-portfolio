@@ -794,30 +794,6 @@ export const detailedProjects: ProjectDetail[] = [
       },
     ],
   },
-
-  // ── Garden Spa ───────────────────────────────────────
-  {
-    slug: "garden-spa",
-    title: "Garden Spa",
-    category: "Landscape & Exterior",
-    location: "Private residence",
-    year: "2023",
-    description:
-      "A private spa garden conceived as a series of outdoor rooms: the pool terrace, the shade pavilion, and the kitchen garden. Every planting scheme, stone selection, and water feature was resolved in 3D before a single plant was ordered.",
-    media: [],
-  },
-
-  // ── Law Firm Buffet ───────────────────────────────────
-  {
-    slug: "law-firm-buffet",
-    title: "Law Firm Buffet",
-    category: "F&B Interior",
-    location: "Central Moscow",
-    year: "2025",
-    description:
-      "An in-house dining and hospitality suite for a prominent law firm, currently in production. Material directions under review — two tile options and three lighting scenarios are being evaluated ahead of the final client presentation.",
-    media: [],
-  },
 ];
 
 export function getProject(slug: string): ProjectDetail | null {
@@ -881,28 +857,24 @@ export const aboutPortraitSrc = ""; //
 
 // ─── SOCIAL SECTION ───────────────────────────────────────
 export const socialEyebrow = "Find me online";
-export const socialTitle = "Work in progress";
-export const socialIntro =
-  "I post renders, material studies, and finished projects on Behance and Instagram. Both are good places to see what's coming before it lands here.";
-export const behanceLabel = "Bē\u00a0 Behance";
-export const instagramLabel = "📷\u00a0 Instagram";
+export const socialTitle = "The work,\nbeyond this page.";
+export const socialStatement =
+  "Extended case studies, process documentation, and commissioned project archives are published on Behance. Updated as work is completed and approved for publication.";
 
-export const behanceThumbs: PinThumb[] = [
-  { label: "Interior", bgClass: "pin-1", tall: true },
-  { label: "Garden", bgClass: "pin-2" },
-  { label: "Facade", bgClass: "pin-3" },
-];
-
-export const igThumbs: IgThumb[] = [
-  { bgColor: "#c9bfb5" },
-  { bgColor: "#b8c9b0" },
-  { bgColor: "#d4a0a4" },
-  { bgColor: "#a8b89a" },
-  { bgColor: "#d9cbbe" },
-  { bgColor: "#c2b8d0" },
-  { bgColor: "#bec8b5" },
-  { bgColor: "#d4b8b5" },
-  { bgColor: "#c8c4ba" },
+export const socialLinks: SocialLink[] = [
+  {
+    platform: "Behance",
+    label: "Portfolio",
+    handle: "behance.net/anastasia_monzon",
+    href: "https://www.behance.net/anastasia_monzon",
+    desc: "Commissioned projects and in-depth process documentation.",
+  },
+  {
+    platform: "LinkedIn",
+    label: "Professional",
+    handle: "linkedin.com/in/anastasiia-monzon-042172234/",
+    href: "https://www.linkedin.com/in/anastasiia-monzon-042172234/",
+  },
 ];
 
 // ─── CONTACT SECTION ──────────────────────────────────────
