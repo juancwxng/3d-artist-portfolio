@@ -34,7 +34,7 @@ export const siteDescription =
   "Freelance 3D architectural visualisation artist based in Mexico. Partnering with architects, interior designers, and developers worldwide to translate CAD files, master plans, and material boards into photorealistic 3D renders.";
 
 // ─── HEADER ───────────────────────────────────────────────
-export const logoText = "Anastasia. Monzon";
+export const logoText = "Anastasia Monzon";
 
 export const navLinks: NavLink[] = [
   { label: "Work", href: "#work" },
