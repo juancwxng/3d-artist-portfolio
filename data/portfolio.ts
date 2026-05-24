@@ -919,5 +919,5 @@ export const footerLinks: FooterLink[] = [
   { label: "Work", href: "#work" },
   { label: "About", href: "#about" },
   { label: "Contact", href: "#contact" },
-  { label: "Privacy", href: "#" },
+  { label: "Privacy", href: "/privacy" },
 ];

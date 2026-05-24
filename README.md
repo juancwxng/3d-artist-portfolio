@@ -54,6 +54,26 @@ npm run deploy    # Production deploy
 | `CONTACT_EMAIL` | `wrangler.jsonc` | Inbox for enquiry emails |
 | `CONTACT_RL_KV` | `wrangler.jsonc` | KV binding for rate limiting |
 
+## Privacy Policy
+
+A dedicated Privacy Policy page lives at `/privacy` (`app/privacy/page.tsx`). It matches the site's editorial typographic style — Playfair Display italic headings, Jost body text, warm-white background, dusty-pink and sage accents — and follows the same two-column eyebrow/body layout used throughout the site.
+
+The policy covers:
+
+| Section | Summary |
+|---|---|
+| Data collected | Contact form fields only (name, email, project type, budget, message) |
+| Purpose | Responding to project enquiries; no marketing or resale |
+| Third-party processors | Resend (email delivery), Cloudflare Pages (hosting), Cloudflare Turnstile (spam protection) |
+| Retention | Enquiry threads ≤ 12 months if no project; project correspondence ≤ 5 years |
+| User rights | Access, correction, deletion, objection, withdrawal of consent |
+| Cookies | No analytics or tracking cookies; Turnstile session cookie only |
+| Children | Not directed at under-16s |
+
+The footer `Privacy` link in `data/portfolio.ts` now points to `/privacy`.
+
+---
+
 ## SEO & GEO
 
 Added/updated to maximise visibility on search engines and AI assistants (ChatGPT, Gemini, Perplexity, Claude):
