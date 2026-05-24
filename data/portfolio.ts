@@ -6,8 +6,6 @@ import type {
   ContactMetaItem,
   NavLink,
   FooterLink,
-  PinThumb,
-  IgThumb,
 } from "@/types";
 
 export interface MediaItem {
