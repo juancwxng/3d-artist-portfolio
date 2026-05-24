@@ -1,6 +1,6 @@
 # Anastasiia Monzón — 3D Visualisation Portfolio
 
-A production portfolio website for **Anastasiia Monzón**, a freelance 3D architectural visualisation artist based in Mexico. The site presents selected work across interior, exterior, and landscape projects; documents her four-step client process; provides an about section; and includes a fully functional project enquiry form that delivers branded email notifications via Resend.
+A production portfolio website for **Anastasia Monzon**, a freelance 3D architectural visualisation artist based in Mexico. The site presents selected work across interior, exterior, and landscape projects; documents her four-step client process; provides an about section; and includes a fully functional project enquiry form that delivers branded email notifications via Resend.
 
 ## Legal Notice & Usage
 

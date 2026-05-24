@@ -1,6 +1,4 @@
-/* src/types/index.ts */
-
-export type TagVariant = 'interior' | 'exterior' | 'neutral';
+export type TagVariant = "interior" | "exterior" | "neutral";
 
 export interface ProjectTag {
   label: string;
@@ -57,12 +55,10 @@ export interface FooterLink {
   href: string;
 }
 
-export interface PinThumb {
+export interface SocialLink {
+  platform: string;
   label: string;
-  bgClass: string;
-  tall?: boolean;
-}
-
-export interface IgThumb {
-  bgColor: string;
+  handle: string;
+  href: string;
+  desc?: string;
 }
