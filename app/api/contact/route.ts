@@ -185,7 +185,12 @@ async function sendEmail(
 export async function POST(req: NextRequest) {
   // ── 1. Origin / CORS check ──────────────────────────────
   const origin = req.headers.get('origin') ?? '';
-  if (!ALLOWED_ORIGINS.includes(origin)) {
+  const originOk =
+    !origin || // no origin header = same-origin or server-to-server
+    ALLOWED_ORIGINS.includes(origin) ||
+    origin.endsWith('.anastasiamonzon.com') ||
+    origin.endsWith('.pages.dev');
+  if (!originOk) {
     return NextResponse.json({ error: 'Forbidden' }, { status: 403 });
   }
 
@@ -247,8 +252,8 @@ export async function POST(req: NextRequest) {
 
   // ── 9. Turnstile verification ───────────────────────────
   const turnstileSecret = env.TURNSTILE_SECRET_KEY;
-  if (turnstileSecret) {
-    const tokenOk = await verifyTurnstile(payload._token ?? '', ip, turnstileSecret);
+  if (turnstileSecret && payload._token) {
+    const tokenOk = await verifyTurnstile(payload._token, ip, turnstileSecret);
     if (!tokenOk) {
       return NextResponse.json(
         { error: 'Security check failed. Please refresh and try again.' },
