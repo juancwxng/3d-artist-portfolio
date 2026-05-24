@@ -857,7 +857,7 @@ export const aboutPortraitSrc = ""; //
 // ─── SOCIAL SECTION ───────────────────────────────────────
 export const socialEyebrow = "Find me online";
 export const socialTitle = "The work,\nbeyond this page.";
-export const socialStatement = "Find Anastasiia on Behance and LinkedIn.";
+export const socialStatement = "Find Anastasia on Behance and LinkedIn.";
 export const socialLinks: SocialLink[] = [
   {
     platform: "Behance",

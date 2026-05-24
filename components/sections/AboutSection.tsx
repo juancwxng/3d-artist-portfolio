@@ -73,7 +73,7 @@ export default function AboutSection() {
 
           {/* Caption beneath photo — editorial byline style */}
           <p className="mt-4 text-[0.5625rem] tracking-[0.22em] uppercase text-[#7a6e63] font-normal">
-            Anastasiia Monzón &nbsp;·&nbsp; Architectural visualisation
+            Anastasia Monzon &nbsp;·&nbsp; Architectural visualisation
           </p>
 
           {/* Pull quote — overlapping the image bottom, desktop only */}
