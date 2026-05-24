@@ -2,7 +2,11 @@ import type { Metadata } from "next";
 import { Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
 import { siteTitle, siteDescription } from "@/data/portfolio";
-import PremiumEffects from "@/components/ui/PremiumEffects";
+import dynamic from "next/dynamic";
+
+const PremiumEffects = dynamic(() => import("@/components/ui/PremiumEffects"), {
+  ssr: false,
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
