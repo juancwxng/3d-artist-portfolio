@@ -6,6 +6,7 @@ import type {
   ContactMetaItem,
   NavLink,
   FooterLink,
+  SocialLink,
 } from "@/types";
 
 export interface MediaItem {
