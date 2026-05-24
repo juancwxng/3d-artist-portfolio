@@ -1,12 +1,9 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
 import { siteTitle, siteDescription } from "@/data/portfolio";
-import dynamic from "next/dynamic";
-
-const PremiumEffects = dynamic(() => import("@/components/ui/PremiumEffects"), {
-  ssr: false,
-});
+import PremiumEffectsWrapper from "@/components/ui/PremiumEffectsWrapper";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -102,8 +99,8 @@ export const metadata: Metadata = {
 
 /*
  * JSON-LD structured data:
- *   – Person  (identifies the artist with sameAs social links)
- *   – ProfessionalService  (identifies the business offering)
+ * – Person  (identifies the artist with sameAs social links)
+ * – ProfessionalService  (identifies the business offering)
  * Both are injected into <head> so AI crawlers and search engines can
  * parse them without executing JavaScript.
  */
@@ -207,8 +204,6 @@ const jsonLdService = {
 /*
  * FAQ JSON-LD — answers the top questions potential clients ask
  * AI assistants and search engines about hiring a 3D visualisation artist.
- * See delivery item 7 for the standalone block; it is also included here
- * so the homepage gets full FAQ rich-result coverage.
  */
 const jsonLdFaq = {
   "@context": "https://schema.org",
@@ -288,7 +283,7 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <PremiumEffects />
+        <PremiumEffectsWrapper />
         {children}
       </body>
     </html>
