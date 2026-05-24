@@ -837,7 +837,7 @@ export const aboutHeadline =
   "A dedicated rendering partner for architects and designers.";
 
 export const aboutOpener =
-  "I'm Anastasiia — a freelance 3D visualisation artist with a background in Landscape Architecture. I specialise in collaborating directly with architects, interior designers, and real estate developers to translate their technical drawings into photorealistic imagery.";
+  "I'm Anastasia — a freelance 3D visualisation artist with a background in Landscape Architecture. I specialise in collaborating directly with architects, interior designers, and real estate developers to translate their technical drawings into photorealistic imagery.";
 
 export const aboutBody =
   "Operating through anastasiamonzon.com from Mexico, I work remotely with design teams across the United States, Canada, Australia, and worldwide. My role isn't to design the space, but to deeply understand your blueprints and material schedules, applying precise lighting and texturing to showcase your architectural vision exactly as you intended.";
@@ -851,22 +851,19 @@ export const aboutDisciplines: string[] = [
   "Landscape design",
 ];
 
-export const aboutPortraitLabel = "Portrait of Anastasiia Monzón";
+export const aboutPortraitLabel = "Portrait of Anastasia Monzon";
 export const aboutPortraitSrc = ""; //
 
 // ─── SOCIAL SECTION ───────────────────────────────────────
 export const socialEyebrow = "Find me online";
 export const socialTitle = "The work,\nbeyond this page.";
-export const socialStatement =
-  "Extended case studies, process documentation, and commissioned project archives are published on Behance. Updated as work is completed and approved for publication.";
-
+export const socialStatement = "Find Anastasiia on Behance and LinkedIn.";
 export const socialLinks: SocialLink[] = [
   {
     platform: "Behance",
     label: "Portfolio",
     handle: "behance.net/anastasia_monzon",
     href: "https://www.behance.net/anastasia_monzon",
-    desc: "Commissioned projects and in-depth process documentation.",
   },
   {
     platform: "LinkedIn",
@@ -916,7 +913,7 @@ export const formBudgets = [
 ];
 
 // ─── FOOTER ───────────────────────────────────────────────
-export const footerCopy = "© 2026 Anastasiia Monzon · All rights reserved";
+export const footerCopy = "© 2026 Anastasia Monzon · All rights reserved";
 
 export const footerLinks: FooterLink[] = [
   { label: "Work", href: "#work" },
