@@ -851,7 +851,7 @@ export const aboutDisciplines: string[] = [
 ];
 
 export const aboutPortraitLabel = "Portrait of Anastasia Monzon";
-export const aboutPortraitSrc = ""; //
+export const aboutPortraitSrc = "/about.webp";
 
 // ─── SOCIAL SECTION ───────────────────────────────────────
 export const socialEyebrow = "Find me online";
