@@ -28,10 +28,9 @@ export interface ProjectDetail {
 }
 
 // ─── SITE META ────────────────────────────────────────────
-export const siteTitle =
-  "Anastasia Monzon · Freelance 3D Architectural Visualisation & Rendering Artist for Architects, Interior Designers & Developers";
+export const siteTitle = "Anastasia Monzon · 3D Architectural Visualisation";
 export const siteDescription =
-  "Freelance 3D architectural visualisation artist — photorealistic interior renders, exterior CGI, and landscape architecture visualisation. Partnering with architects, interior designers, and real estate developers worldwide. Starting from $800 per render. Accepting Q3 2026 projects.";
+  "Freelance 3D architectural visualisation artist. Photorealistic interior renders, exterior CGI, and landscape visualisation. Remote worldwide.";
 
 // ─── HEADER ───────────────────────────────────────────────
 export const logoText = "Anastasia Monzon";
