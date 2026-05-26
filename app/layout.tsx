@@ -1,4 +1,3 @@
-// app/layout.tsx
 import type { Metadata } from "next";
 import { Playfair_Display, Jost } from "next/font/google";
 import "./globals.css";
@@ -115,7 +114,7 @@ const jsonLdPerson = {
   url: BASE_URL,
   email: "hello@anastasiamonzon.com",
   image: `${BASE_URL}/og-image.jpg`,
-  knowsLanguage: ["English", "Spanish", "Russian"],
+  knowsLanguage: ["English", "Russian"],
   workLocation: {
     "@type": "Place",
     name: "Mexico",
@@ -269,6 +268,7 @@ export default function RootLayout({
       }
     >
       <head>
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdPerson) }}
